@@ -1,0 +1,16 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Imagen responsiva">
+  <h1>Imagen responsiva</h1>
+  
+  <MyCode code={`
+img {
+  max-width: 100%;
+  height: auto
+}        
+  `} lang="css"/>
+
+</LayoutCSS>

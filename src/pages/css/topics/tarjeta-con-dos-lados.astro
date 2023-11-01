@@ -1,0 +1,58 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Tarjeta con dos lados">
+    <h1>Tarjeta con dos lados</h1>  
+    
+    <MyCode code={`    
+<div class="card-container">
+  <div class="card front">
+    <h2>front face</h2>
+  </div>
+  <div class="card back">
+    <h2>back face</h2>
+  </div>
+</div>
+
+<style>
+
+.card-container{
+  border: 1px solid royalblue;
+  width: 400px;
+  height: 250px;
+  position: relative;
+  cursor: pointer;
+  transition: transform .5s ease-in-out;
+  perspective: 5rem;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+}
+
+.card-container:hover{
+  transform: translateX(-100%) rotateY(180deg);
+}
+
+.card{
+  display: grid;
+  place-items: center;
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+  backface-visibility: hidden;
+}
+
+.front{
+  background-color: aqua;
+  transform: rotateY(0deg);
+}
+
+.back{
+  background-color: coral;
+  transform: rotateY(180deg);
+}
+
+</style>  
+  `}/>
+</LayoutCSS>

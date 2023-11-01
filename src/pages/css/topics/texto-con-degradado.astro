@@ -1,0 +1,27 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Texto con degradados">
+  <h1>Texto con degradados</h1>
+  
+  <MyCode code={`    
+<h5>Welcome</h5>        
+
+<style>
+
+h5{
+  font-size: 120px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: transparent;
+  background: linear-gradient(180deg, red, blue);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+</style>    
+  `}/>
+
+</LayoutCSS>

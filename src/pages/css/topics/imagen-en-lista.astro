@@ -1,0 +1,61 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Imágen en lista">
+  <h1>Imágen en lista</h1>
+  <p>Te permite poner la imagen que quieras como viñetas en las etiquetas li de las listas</p>
+
+  <MyCode code={`
+<ul class="list">
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+</ul>
+
+<style>
+
+.list li {
+  list-style-type: none;
+}
+
+.list li:before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background-image: url(imgvignettes);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}        
+
+</style>     
+  `}/>
+  <h2>Otra forma de hacerlo</h2>
+  <MyCode code={`
+<ul class="list">
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+</ul>
+
+<style>
+
+li::marker{
+content: "🔐";
+/*
+se recomienda usar iconos svg, tamaño maximo de 14px para que se ajuste bien
+content: url(./icons/imgvignettes);
+*/
+}
+
+</style>        
+  `}/>
+
+</LayoutCSS>

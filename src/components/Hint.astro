@@ -1,0 +1,40 @@
+<div class="hint">
+  <header>
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-help-square-rounded" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#3992ff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z"></path>
+      <path d="M12 16v.01"></path>
+      <path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483"></path>
+    </svg>
+    <p class="title">Nota</p>
+  </header>
+  <slot/>
+</div>
+
+<style>
+
+  .hint{
+    font-size: 18px;
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+    color: rgb(var(--title-color));
+    background-color: #3992ff33;
+    border-left: 6px solid #3992ff;
+    border-radius: 5px;
+  }
+  .hint header{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+  }
+  .hint .title{
+    color: #3992ff;
+    font-weight: 600;
+  }
+  
+</style>

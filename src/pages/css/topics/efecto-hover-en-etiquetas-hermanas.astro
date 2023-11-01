@@ -1,0 +1,26 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Efecto hover en etiquetas hermanas">
+  <h1>Efecto hover en etiquetas hermanas</h1>
+  
+  <MyCode code={`    
+<ul>
+  <li>1</li>
+  <li>2</li>
+  <li>3</li>
+  <li>4</li>
+</ul>
+
+<style>
+
+ul:hover > :not(:hover) {
+  opacity: 0.5;
+}
+
+</style>
+  `}/>
+
+</LayoutCSS>

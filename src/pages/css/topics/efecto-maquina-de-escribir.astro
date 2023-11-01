@@ -1,0 +1,36 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Efecto máquina de escribir">
+  <h1>Efecto máquina de escribir</h1>
+  
+  <MyCode code={`
+<span>Hello world</span> 
+
+<style>
+span{
+  display: block;
+  white-space: nowrap;
+  border-right: 4px solid;
+  width: 10ch; /*número de caracteres de la etiqueta span + 1*/
+  animation: typing 2s steps(10), blink .5s step-end;
+  overflow: hidden;
+}
+
+@keyframes typing {
+  from { 
+    width: 0;
+  }
+}
+  
+@keyframes blink {
+  50% { 
+    border-color: transparent;
+  }
+}
+</style>  
+  `}/>
+
+</LayoutCSS>

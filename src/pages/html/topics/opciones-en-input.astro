@@ -1,0 +1,59 @@
+---
+import Hint from "@/components/Hint.astro";
+import LayoutHTML from "@layouts/LayoutHTML.astro";
+import MyCode from "@components/MyCode.astro";
+---
+<LayoutHTML title="Opciones en input">
+  <h1>Opciones en input</h1>
+  <p>En un input puedes tener una <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist" target="_blank" rel="noopener noreferrer" title="mas informacion sobre la etiqueta datalist">lista de opciones</a> predefinidas por ti para facilitar la elección o la búsqueda por parte del usuario </p>
+  <Hint>
+    <p>
+      Desafortunadamente a la lista no se le puede aplicar estilo con CSS.
+    </p>
+  </Hint>
+  <MyCode code={`
+<!--con input de tipo texto -->
+<div>
+  <label>
+    escoge un framework:
+    <input list="frameworks" type="text"/>
+  </label>        
+  <datalist id="frameworks">
+    <option value="React"></option>
+    <option value="Vue"></option>
+    <option value="Svelte"></option>
+    <option value="Angular"></option>
+  </datalist>
+</div>
+
+
+<!--con input de tipo time -->
+<div>
+  <label>
+  escoge una hora:
+  <input list="popularHours" type="time"/>
+  </label>        
+  <datalist id="popularHours">
+    <option value="12:00"></option>
+    <option value="13:00"></option>
+    <option value="14:00"></option>
+  </datalist>
+</div>
+    
+
+<!--con input de tipo color -->
+<div>
+  <label>
+    Escoge un color:
+    <input type="color" list="redColors"/>
+  </label>
+  <datalist id="redColors">
+    <option value="#800000"></option>
+    <option value="#8B0000"></option>
+    <option value="#A52A2A"></option>
+    <option value="#DC143C"></option>
+  </datalist>
+</div>
+  `}/>
+
+</LayoutHTML>

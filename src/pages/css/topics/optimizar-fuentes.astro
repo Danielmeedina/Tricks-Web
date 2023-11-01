@@ -1,0 +1,31 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Optimizar fuentes">
+  <h1>Optimizar fuentes</h1>
+  <p>Esta es la mejor manera de incorporar fuentes a tu sitio web:</p>
+  <ul>
+    <li><b>paso 1</b>: busca la fuente que te guste, descárgala y guárdala en tu proyecto</li>
+    
+    <li><b>paso 2 </b>: Ve a la página <a href="https://transfonter.org/" target="_blank" rel="noopener noreferrer">transfonter.org</a> y cambie el formato a .woff2, ya que este es el formato más optimizado para fuentes, además de ser compatible con la mayoría de los navegadores</li>
+    
+    <li><b>paso 3</b>: Finalmente, ve a tu CSS y copia el código de abajo</li>
+  </ul>
+
+  <p>
+    Si tienes alguna pregunta puedes ver este <a href="https://www.youtube.com/watch?v=jhg2xas3av0" target="_blank" rel="noopener noreferrer">vídeo</a> 
+  </p>
+
+  <MyCode code={`
+@font-face {
+  font-family: "Rubik Vinyl"; /* <-- Nombre de la fuente */
+  src: url("fonts/RubikVinyl-Regular.woff2") format("woff2"); 
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+  `} lang="css"/>
+
+</LayoutCSS>

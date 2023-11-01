@@ -1,0 +1,59 @@
+---
+import Warning from "@components/Warning.astro";
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Scroll de lectura">
+  <h1>Scroll de lectura</h1>
+  <Warning>
+    <p>Esta funcionalidad es un poco reciente asi que no esta soportado por todos los navegadores, en <a href="https://caniuse.com/?search=animation-timeline" target="_blank" rel="noopener noreferrer">Can i use</a> puedes revisar que tan soportado esta en este preciso momento</p>
+  </Warning>
+  
+  <MyCode code={`
+<section>
+<div class="progress">
+</div>
+  <article>Parrafo 1</article>
+  <article>Parrafo 2</article>
+  <article>Parrafo 3</article>
+  <article>Parrafo 4</article>
+  <article>Parrafo 5</article>
+</section>
+
+<style>
+
+.progress{
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-color: cyan;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation-name: progress;
+  animation-timeline: scroll();
+}
+
+@keyframes progress{
+  100%{
+    transform: scaleX(1);
+  }
+}
+
+article{
+  width: 100%;
+  height: 70vh;
+  background-color: darkkhaki;
+  margin-bottom: 20px;
+  display: grid;
+  place-items: center;
+  font-size: 60px;
+
+}
+
+</style>        
+  `}/>
+
+</LayoutCSS>

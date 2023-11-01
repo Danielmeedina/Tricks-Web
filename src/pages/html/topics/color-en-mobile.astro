@@ -1,0 +1,19 @@
+---
+import LayoutHTML from "@layouts/LayoutHTML.astro";
+import MyCode from "@components/MyCode.astro";
+---
+
+<LayoutHTML title="Color en móvil">
+  <h1>Icono en móvil</h1>
+  <p>
+    con esta línea puedes poner un color a la cabecera de la web en versión móvil.
+  </p>
+  <MyCode code={`
+<meta name="theme-color" content="#4285f4" />
+
+<!-- tambien puedes poner uno diferente para cada aspecto de color -->
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="cyan" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="black" />
+  `}/>
+  
+</LayoutHTML>

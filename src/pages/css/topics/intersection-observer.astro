@@ -1,0 +1,70 @@
+---
+import MyCode from "@components/MyCode.astro";
+import Warning from "@components/Warning.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Intersection observer">
+  <h1>Intersection observer</h1>
+  <p>Puedes usar la API del Intersection observer solo con CSS de manera fácil y rápida.</p>
+
+  <Warning>
+    <p>Actualmente, no es 100% compatible con todos los navegadores, puedes ver <a href="https://caniuse.com/?search=%20view-timeline-name" target="_blank" rel="noopener noreferrer">aquí</a> en que navegadores si funciona</p>
+  </Warning>
+
+  <MyCode code={`
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+<style>
+
+div{
+  width: 300px;
+  height: 500px;
+  margin-bottom: 10px;
+  background-color: red;
+  view-timeline-name: --revealing-image;
+  animation-timeline: --revealing-image;
+  animation-fill-mode: both;
+}
+
+div:nth-child(even){
+  animation-name: show;
+
+/* te permite decidir dónde comienza la animación (entry) y dónde termina (cover) */
+  animation-range: entry 5% cover 50%
+}
+
+div:nth-child(odd){
+  animation-name: showInverse;
+  animation-range: entry 10% cover 50%
+}
+
+@keyframes show{
+  from{
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes showInverse{
+  from{
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+  
+</style>   
+  `}/>
+
+</LayoutCSS>

@@ -1,0 +1,27 @@
+---
+import Hint from "@/components/Hint.astro";
+import LayoutHTML from "@layouts/LayoutHTML.astro";
+import MyCode from "@components/MyCode.astro";
+
+---
+
+<LayoutHTML title="Aceptar entrada de archivo">
+  <h1>Aceptar entrada de archivo</h1>
+  <p>
+    El atributo de aceptación especifica un filtro para los tipos de archivos que el usuario puede elegir en el cuadro de diálogo de entrada de archivos.
+  </p>
+  <Hint>
+    <p>El atributo de aceptación solo se puede utilizar con input type="file".</p>
+  </Hint>
+  <MyCode code={`  
+<!--
+  Para especificar más de un valor, separe los valores con una coma.
+  <input accept="audio/*,video/*,image/*" />.
+-->
+
+<input type="file" accept=".jpg , .raw">
+  `}/>
+
+
+
+</LayoutHTML>

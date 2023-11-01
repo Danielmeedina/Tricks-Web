@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string
+}
+
+const {title} = Astro.props
+const topics = await Astro.glob(`../pages/javascript/topics/*.astro`);
+
+import LayoutTopic from "@layouts/LayoutTopic.astro"
+import TopicsNavbar from "@components/TopicsNavbar.astro";
+---
+<LayoutTopic title={title} colorLang="#f7df1e" href="/javascript">
+  <TopicsNavbar topics={topics} slot="topic-navbar"/>
+  <slot/>
+</LayoutTopic>

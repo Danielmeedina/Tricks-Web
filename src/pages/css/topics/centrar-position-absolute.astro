@@ -1,0 +1,61 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Centrar position absolute">
+  <h1>Centrar position absolute</h1>
+  
+  <MyCode code={`
+<div class="container">
+  <h1>item 1</h1>
+  <small class="absolute">#</small>
+</div>   
+
+<style>
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+</style>
+          `} />
+          
+  <h2>Otra forma de hacerlo</h2>  
+  <MyCode code={`
+<div class="container">
+  <h1>item 1</h1>
+  <div class="absolute">
+    <small>#</small>
+  </div>
+</div>   
+
+<style>
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.absolute {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+</style>    
+          `} />
+</LayoutCSS>

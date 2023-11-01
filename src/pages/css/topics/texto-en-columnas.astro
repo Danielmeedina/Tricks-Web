@@ -1,0 +1,35 @@
+---
+import Warning from "@components/Warning.astro";
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Texto en columnas">
+  <h1>Texto en columnas</h1>
+  <Warning>
+    <p>No debe confundirse con grid o flex, esto es sólo para texto.</p>
+  </Warning>
+  
+  <MyCode code={`
+<p class="text-column">
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti earum pariatur 
+  aspernatur nostrum corporis deserunt laboriosam consectetur, vitae, rem obcaecati 
+  cum dicta iusto. Maiores quibusdam sint quam commodi consequatur ipsa impedit 
+  exercitationem reprehenderit ex aut. Tempore facilis cumque fugit at reiciendis 
+  sequi rerum, quis pariatur sint perferendis tenetur autem repellat!
+</p>      
+
+<style>
+
+.text-column {
+  list-style-position: inside;
+  column-count: 4; /*numero de columnas*/
+  column-gap: 1rem;
+  column-rule: 1px solid red; /*linea de separacion*/ 
+  column-width: 100px; /*ancho minimo de las columnas*/
+}      
+
+</style>        
+  `}/>
+
+</LayoutCSS>

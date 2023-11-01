@@ -1,0 +1,30 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Colores para input">
+    <h1>Colores para input</h1>
+    <p>Te permite cambiar el color de los checkbox y radios, no se refiere al color del texto</p>
+  
+    <MyCode code={`    
+<form>
+  <input type="text" placeholder="escribe">
+  <input type="checkbox">
+  <input type="radio">
+</form>
+
+<style>
+  
+/*no aceptan degradados*/
+form {
+  accent-color: red;
+}
+
+input[type="text"]{
+  caret-color: red;
+}
+
+</style>      
+  `}/>
+</LayoutCSS>

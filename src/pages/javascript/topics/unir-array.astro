@@ -1,0 +1,33 @@
+---
+import LayoutJS from "@layouts/LayoutJS.astro";
+import MyCode from "@components/MyCode.astro";
+---
+
+<LayoutJS title="Unir Array">
+  <h1>Unir Array</h1>
+
+  <MyCode code={`
+// Unir array con Concat()
+const array1 = ['a', 'b', 'c'];
+const array2 = ['d', 'e', 'f'];
+const array3 = array1.concat(array2);
+
+console.log(array3);
+// resultado: Array ["a", "b", "c", "d", "e", "f"]        
+
+
+// Unir array con spread operator
+const result = [...array1, ...array2]
+
+
+// Unir array con flat()
+//Si cuando fusionas los arrays se anidan, puedes usar este método para aplanar el array.
+const arr1 = [1, 2, 3, 4, 5];
+const arr2 = [6, 7, [8, 9, 10, [11, 12, 13, 14]]];
+
+const result = [...arr1, ...arr2].flat(Infinity);
+
+console.log(result);       
+  `} lang="js"/>
+  
+</LayoutJS>

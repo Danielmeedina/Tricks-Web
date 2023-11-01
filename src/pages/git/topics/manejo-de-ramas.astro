@@ -1,0 +1,31 @@
+---
+import LayoutGit from "@layouts/LayoutGit.astro"
+---
+
+<LayoutGit title="Manejo de ramas">
+  <h1>Manejo de ramas</h1>
+  <ul>
+    <li><b>git branch nombre_de_rama</b>: Crear nueva rama</li>
+    
+    <li><b>git branch</b>: nos muestra todas las ramas del repositorio</li>
+    
+    <li><b>git branch --no-merged</b>: enumera las ramas no fusionadas con la rama actual</li>
+    
+    <li><b>git branch --merged</b>: enumera las ramas fusionadas con la rama actual</li>
+    
+    <li><b>git checkout -b nombre_de_rama</b>: se usa para crear una nueva rama y te cambia directamente</li>
+    
+    <li><b>git checkout nombre_de_rama</b>: se usa para cambiar ramas</li>
+      
+    <li><b>git checkout hash</b>: hash = código que se muestra en el registro, por ejemplo: ca7csa90, esto se usa para ir a una versión anterior del proyecto</li>
+    
+    <li><b>git branch -d nombre_de_rama</b>: eliminar rama</li>
+    
+    <li><b>git branch -D nombre_de_rama</b>: eliminamos una rama a la fuerza</li>
+    
+    <li><b>git revert</b>: revierte el último commit y crea uno nuevo con los cambios revertidos, pero no los elimina.</li>
+    
+    <li><b>git merge nombre_de_rama</b>: al estar en la rama principal, lo usamos para traer los cambios realizados en otras ramas y unirlos a la rama principal.</li>
+
+  </ul>
+</LayoutGit>

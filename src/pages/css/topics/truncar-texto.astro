@@ -1,0 +1,49 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Truncar Texto">
+  <h1>Truncar Texto</h1>
+  
+  <MyCode code={`
+<h4>
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum,
+  provident ab facilis, recusandae magnam delectus in quasi odio quis,
+  corporis facere libero ea illo mollitia accusantium? Ab in rem placeat?
+</h4>      
+
+<style>
+h4 {
+  width: 500px;
+  border: 1px solid red;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+h4:hover {
+  white-space: normal;
+}
+</style>
+  `}/>
+  <p>Si quieres truncar más de una línea, hazlo de esta manera.</p>
+  
+  <MyCode code={`
+<p>
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum,
+  provident ab facilis, recusandae magnam delectus in quasi odio quis,
+  corporis facere libero ea illo mollitia accusantium? Ab in rem placeat?
+</p>      
+
+<style>
+p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; /*numero de lineas que quieres ver*/
+  overflow: hidden;
+}
+</style>
+  `}/>
+
+</LayoutCSS>

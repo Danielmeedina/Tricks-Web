@@ -1,0 +1,31 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Mezclar Imágenes">
+  <h1>Mezclar Imágenes</h1>
+  
+  <MyCode code={`
+<div class="multiImg"></div>  
+
+<style>
+
+.multiImg{
+  border: 1px solid black;
+  width: 300px;
+  height: 300px; 
+  background: 
+  /* pez.jpg */
+  url(https://th.bing.com/th/id/OIP.dDgDhV6Yy0eN8JBiZhC89gHaE8?pid=ImgDet&rs=1), 
+  /* splash.png <-- imagen con transparencia */
+  url(https://th.bing.com/th/id/OIP.icSFw3ZV7AWRjpYGpC2-DAHaGX?pid=ImgDet&rs=1);
+  background-size: cover;
+  background-position: center center;
+  background-blend-mode: screen;
+}
+
+</style>        
+  `}/>
+
+</LayoutCSS>

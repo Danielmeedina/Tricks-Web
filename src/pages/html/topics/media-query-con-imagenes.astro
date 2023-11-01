@@ -1,0 +1,19 @@
+---
+import LayoutHTML from "@layouts/LayoutHTML.astro";
+import MyCode from "@components/MyCode.astro";
+---
+
+<LayoutHTML title="Media query con imagenes">
+  <h1>Media query con imagenes</h1>
+  <p>
+    Se utiliza para poner varias imágenes dependiendo del ancho de la pantalla, es como un media query en HTML pero solo para imágenes.
+  </p>
+  <MyCode code={`
+<Picture>
+  <source media="(min-width: 1024px)" srcset="imgLarge.jpg">
+  <source media="(min-width: 600px)" srcset="imgMedium.jpg">
+  <img src="imgSmall.jpg"> <!--imagen mas pequeña--> 
+</Picture>        
+  `}/>
+  
+</LayoutHTML>

@@ -1,0 +1,20 @@
+---
+import LayoutGit from "@layouts/LayoutGit.astro"
+---
+
+<LayoutGit title="Fusionar ramas">
+  <h1>Fusionar ramas</h1>
+  <p>pasos a seguir:</p>
+
+  <ul>
+    <li>nos ubicamos en la rama donde queremos que sea la fusión, generalmente será la main <b>git checkout main</b></li>
+    
+    <li>usamos el comando <b>git merge rama_secundaria</b></li>
+    
+    <li>para actualizar nuestro repositorio con la última carga y no generar conflictos usamos el siguiente comando <b>git push -u origin main</b></li>
+    
+    <li><b>(opcional)</b>: si estás seguro de que ya no necesitarás las ramas, puedes eliminarlas con el comando <b>git push origin --delete Branch_Seconary</b></li>
+  </ul>
+
+
+</LayoutGit>

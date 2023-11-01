@@ -1,0 +1,65 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Efecto 3D">
+    <h1>Efecto 3D</h1>
+    <!-- string literal -->
+  
+    <MyCode code={`
+<div id="poster"></div>
+
+<style>
+
+  #poster{
+    width: 300px;
+    height: 200px;
+    transition: box-shadow .1s, transition .1s;
+    background: url(https://bit.ly/3ZbNdfW) no-repeat center;
+    background-size: cover;
+  }
+
+  #poster:hover{
+    box-shadow: 0 0 60px rgba(0, 0, 0, 1);
+  }
+
+</style>
+
+<script>
+
+  const el = document.getElementById("poster")
+
+  const height = el.clientHeight
+  const width = el.clientWidth
+
+  el.addEventListener("mousemove", (e) => {
+    const {layerX, layerY} = e
+
+    const yRotation = ( (layerX - width / 2)/width)*20
+
+    const xRotation = ( (layerY - height / 2)/height)*20
+
+    const change =
+    'perspective(500px) ' +
+    'scale(1.1) ' +
+    'rotateX(' + xRotation + 'deg) ' +
+    'rotateY(' + yRotation + 'deg)';
+
+    el.style.transform = change
+  })
+  
+  el.addEventListener("mouseout", () => {
+    
+    const change =
+    'perspective(500px) ' +
+    'scale(1) ' +
+    'rotateX(0deg)' +
+    'rotateY(0deg)';
+
+    el.style.transform = change
+  })
+
+</script>    
+          `} />
+</LayoutCSS>

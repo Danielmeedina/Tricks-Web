@@ -1,0 +1,36 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Selector de Atributo">
+    <h1>Selector de atributo</h1>
+    <p>Los selectores de atributos permiten elegir elementos HTML en función de sus atributos y/o valores de esos atributos.</p>
+    <p>Los tipos de selectores de atributos son los siguientes:</p>
+    <ul>
+      <li>
+        <b>[nombre_atributo]</b>, selecciona los elementos que tienen establecido el atributo llamado nombre_atributo independientemente de su valor.
+      </li>
+
+      <li>
+        <b>[nombre_atributo=valor]</b>, selecciona los elementos que tienen establecido un atributo llamado nombre_atributo con un valor igual a valor.
+      </li>
+
+      <li>
+        <b>[nombre_atributo~=valor]</b>, selecciona los elementos que tienen establecido un atributo llamado nombre_atributo y al menos uno de los valores del atributo es valor.
+      </li>
+
+      <li>
+        <b>[nombre_atributo|=valor]</b>, selecciona los elementos que tienen establecido un atributo llamado nombre_atributo, cuyo valor es una lista de valores, donde alguno comienza por valor.
+      </li>
+
+      <li>
+        <b>[nombre_atributo$=valor]</b>, Selecciona aquellas etiquetas cuyo atributo acabe en ese valor.
+      </li>
+
+      <li>
+        <b>[nombre_atributo^=valor]</b>, Selecciona aquellas etiquetas cuyo atributo comience por ese valor.
+      </li>
+    </ul>
+</Layou
+tCSS>

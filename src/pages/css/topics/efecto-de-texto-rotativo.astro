@@ -1,0 +1,61 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Efecto de texto rotativo">
+  <h1>Efecto de texto rotativo</h1>
+  
+  <MyCode code={`
+<div class="container-text">
+  <span>Text</span>
+  <div class="rotate">
+    <span>Thing</span>
+    <span>Other</span>
+    <span>Help</span>
+  </div>
+</div>   
+
+<style>
+.container-text {
+  letter-spacing: 2px;
+  font-size: 28px;
+  text-align: center;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  height: 25px;
+  overflow: hidden;
+}
+
+.rotate {
+  position: relative;
+  animation: change 3s ease-in-out infinite alternate;
+  -webkit-animation: change 3s ease-in-out infinite alternate;
+}
+
+.rotate:hover {
+  animation-play-state: paused;
+}
+
+.rotate span {
+  display: block;
+  color: red;
+}
+@keyframes change {
+  25% {
+    top: -2px;
+  }
+  50% {
+    top: -34px;
+  }
+  100% {
+    top: -65px;
+  }
+}
+
+</style> 
+  `}/>
+
+</LayoutCSS>

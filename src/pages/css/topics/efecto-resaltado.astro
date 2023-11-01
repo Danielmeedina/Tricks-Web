@@ -1,0 +1,27 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Efecto resaltado">
+  <h1>Efecto resaltado</h1>
+  
+  <MyCode code={`    
+<h2>Welcome</h2>
+
+<style>
+  
+h2{
+background: right / 0% 100% no-repeat linear-gradient(#c1f5ee, #c1f5ee);
+transition: background-size 500ms;
+}
+
+h2:hover{
+  background: left / 100% 100% no-repeat linear-gradient(#c1f5ee, #c1f5ee);
+  cursor: pointer;
+} 
+
+</style>         
+  `}/>
+
+</LayoutCSS>

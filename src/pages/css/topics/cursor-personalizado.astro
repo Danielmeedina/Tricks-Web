@@ -1,0 +1,20 @@
+---
+import Warning from "@/components/Warning.astro";
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Cursor personalizado">
+    <h1>Cursor personalizado</h1>
+    <p>Puedes cambiar el cursor de tu sitio web por el de tu elección. En <a href="https://www.flaticon.es/iconos-gratis/cursor" target="_blank" rel="noopener noreferrer">Flaticon</a> encontrarás cientos de cursores para que elijas el de tu gusto</p>
+
+    <Warning>
+      <p>No se recomienda cambiar el cursor ya que puede resultar problemático para algunas personas.</p>
+    </Warning>
+  
+    <MyCode code={`
+body {
+  cursor: url("./newCursor.png"), auto;
+}       
+  `} lang="css"/>
+</LayoutCSS>

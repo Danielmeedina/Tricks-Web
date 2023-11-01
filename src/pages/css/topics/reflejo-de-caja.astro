@@ -1,0 +1,23 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Reflejo de caja">
+    <h1>Reflejo de caja</h1>
+    <p>te permite reflejar el cuadro que quieras hacia el lado que desees, útil para dar efectos a textos o imágenes</p>
+  
+    <MyCode code={`
+<div class="box">HIIIIIIIIIIIIIIIIIIIIIIII</div>
+
+<style>
+
+  .box {
+    color: black;
+    -webkit-box-reflect: below 0 linear-gradient(transparent, black);
+    /*-webkit-box-reflect: below -2px linear-gradient(to bottom, transparent, rgba(0,0,0,0.8));*/
+  }
+
+</style>
+       `}/>
+</LayoutCSS>

@@ -1,0 +1,15 @@
+---
+import LayoutHTML from "@layouts/LayoutHTML.astro";
+import MyCode from "@components/MyCode.astro";
+---
+
+<LayoutHTML title="Descargar Archivos">
+  <h1>Descargar Archivos</h1>
+  <p>
+    El atributo de descarga es para indicarle al navegador que descargue una URL en lugar de navegar, el atributo de descarga especifica que el destino (el archivo especificado en el atributo href) se descargará cuando un usuario haga clic en el hipervínculo.
+  </p>
+  <MyCode code={`
+<a href="/file.pdf" download>Download pdf</a>
+  `}/>
+  
+</LayoutHTML>

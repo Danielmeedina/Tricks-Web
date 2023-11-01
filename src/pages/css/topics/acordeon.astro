@@ -1,0 +1,61 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Acordeón">
+    <h1>Acordeón</h1>
+  
+    <MyCode code={`
+<details>
+  <summary>
+    Title accordion
+    <span>🔺</span>
+    <!-- aqui puedes colocar un icono para inidicar de que este details esta abierto -->
+    <!-- <img src="icon.svg" alt="xx"/> -->
+  </summary>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad distinctio, 
+    ipsa laboriosam hic magni aliquid velit harum quia quisquam voluptates doloremque 
+    deserunt libero impedit vero eius. Saepe, eius maiores!
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ad distinctio, 
+    ipsa laboriosam hic magni aliquid velit harum quia quisquam voluptates doloremque 
+    deserunt libero impedit vero eius. Saepe, eius maiores!
+  </p>
+</details>
+
+
+<style>
+
+  details{
+    width: 100%;
+    max-width: 400px;
+  }
+
+  summary, details p{
+    padding: 20px;
+  }
+
+  summary{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+  }
+
+  details p{
+    border-top: 1px solid gray;
+    color: gray;
+    font-size: 14px;
+
+  }
+
+  details[open] summary span{
+    transform: rotate(180deg);
+  }
+
+</style>    
+          `} />
+</LayoutCSS>

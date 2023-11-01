@@ -1,0 +1,21 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="scroll Personalizado">
+    <h1>Scroll Personalizado</h1>
+    <p>De esta forma podrás modificar las barras de desplazamiento de cada parte de la página.</p>
+  
+    <MyCode code={`    
+body::-webkit-scrollbar {
+  height: 10px;
+  background-color: transparent
+}        
+
+body::-webkit-scrollbar-thumb {
+  background-color: blue;
+  border-radius: 10px;
+} 
+  `} lang="css"/>
+</LayoutCSS>

@@ -1,0 +1,47 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Efecto cursor personalizado">
+  <h1>Efecto cursor personalizado</h1>
+
+  <MyCode code={`
+<div class="cursor"></div>
+
+<style>
+
+body{
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background: linear-gradient(270deg,white 50%, black 50%);
+}
+
+.cursor{
+ position: fixed; 
+ width: 80px;
+ height: 80px;
+ border-radius: 50%;
+ background-color: rgb(255, 255, 255);
+ pointer-events: none;
+ transition: .1s;
+ transform: translate(-50%,-50%);
+ mix-blend-mode: difference;
+}
+
+</style>
+
+<script>
+
+const cursor = document.querySelector(".cursor");
+
+document.addEventListener("mousemove", (e) =>{
+  cursor.style.left = e.pageX + "px";
+  cursor.style.top = e.pageY + "px";
+})
+
+</script>
+  `}/>
+
+</LayoutCSS>

@@ -1,0 +1,17 @@
+---
+import LayoutHTML from "@layouts/LayoutHTML.astro";
+import MyCode from "@components/MyCode.astro";
+---
+
+<LayoutHTML title="Icono en móvil">
+  <h1>Icono en móvil</h1>
+  <p>
+    Con esta línea puedes poner un logo para que cuando guarden tu página en el móvil se pueda ver dicho logo
+  </p>
+  <MyCode code={`
+<head>
+  <link rel="icon" type="image/webp" sizes="32x32" href="/Logo.webp">
+</head>           
+  `}/>
+  
+</LayoutHTML>

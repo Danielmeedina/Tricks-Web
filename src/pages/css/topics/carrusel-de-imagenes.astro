@@ -1,0 +1,41 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Carrusel De Imágenes">
+    <h1>Carrusel De Imágenes</h1>
+  
+    <MyCode code={`
+<section class="carrousel">
+  <article class="item">item 1</article>
+  <article class="item">item 2</article>
+  <article class="item">item 3</article>
+  <article class="item">item 4</article>
+  <article class="item">item 5</article>
+</section>   
+
+<style>
+
+.carrousel {
+  display: flex;
+  flex-flow: row nowrap;
+  scroll-behavior: auto;
+  gap: 10px;
+  overflow-y: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.item {
+  flex: 0 0 90%;
+  height: 300px;
+  background-color: rebeccapurple;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+</style>    
+       `}/>
+</LayoutCSS>

@@ -1,0 +1,36 @@
+---
+import LayoutGit from "@layouts/LayoutGit.astro"
+---
+
+<LayoutGit title="Comandos alternativos">
+  <h1>Comandos alternativos</h1>
+  <ul>
+    <li><b>git fetch</b>: es como si estuviéramos descargando los cambios del repositorio central pero no hace un merge.</li>
+    
+    <li><b> git status -s</b>: te muestra el estado de los archivos de una manera más ordenada</li>
+    
+    <li><b>git mv archivo new_name</b>: te permite cambiar los archivos y están listos para ser comprometidos.</li>
+    
+    <li><b>git diff</b>: nos permite ver gráficamente todos los cambios que se van a realizar pero que aún no han pasado a la etapa de stage.</li>
+    
+    <li><b>gif diff --staged</b>: nos muestra gráficamente los cambios que se van a realizar pero que están en etapa de stage.</li>
+    
+    <li><b>git commit --amend</b>: nos permite agregar más cosas al último commit en caso de que olvidemos cambiar o eliminar algo.</li>
+    
+    <li><b>git commit --amend --no -edit</b>: hace lo mismo que el anterior pero no es necesario escribir un nuevo comentario, mantiene el que tienes</li>
+    
+    <li><b>git reset --hard HEAD~1</b>: nos permite eliminar el último commit</li>
+    
+      <li><b>git rm archivo</b>: elimina un archivo y ya está listo para ser comprometido</li>
+      
+    <li><b>git restore --staged archivo</b>: restaura archivos que están en un estado stage</li>
+    
+    <li><b>git restore archivo</b>: restaura un archivo eliminado</li>
+    
+    <li><b>git log</b>: nos muestra el historial de todos los cambios realizados</li>
+    
+    <li><b>git log --oneline</b>: nos muestra el historial de todos los cambios realizados pero de una forma más ordenada y resumida.</li>
+    
+
+  </ul>
+</LayoutGit>

@@ -1,0 +1,31 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Background animado">
+    <h1>Background animado</h1>
+    <p>Se elige varios colores para ponerlos de fondo y que se muevan dando la impresión de que es un efecto degradado animado</p>
+  
+    <MyCode code={`
+html {
+  background: linear-gradient(-45deg, red, blue, yellow, grey);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  max-width: 1400px;
+  margin: 0 auto;
+}        
+
+@keyframes gradient {
+  0%{
+    background-position: 0% 50%
+  }
+  50%{
+    background-position: 100% 50%
+  }
+  100%{
+    background-position: 0% 50%
+  }
+}
+  `} lang="css"/>
+</LayoutCSS>

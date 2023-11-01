@@ -1,0 +1,152 @@
+---
+interface Props {
+  title: string,
+  colorLang: string,
+  href: string,
+}
+
+const {title, colorLang, href} = Astro.props
+
+import Navbar from "@components/Navbar.astro";
+import Footer from "@components/Footer.astro";
+import "../styles/GlobalStyle.css"
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+    <link rel="icon" type="image/webp" sizes="32x32" href="/Logo.webp">
+    <meta name="theme-color" content="#ffffff">
+		<meta name="viewport" content="width=device-width" />
+		<title>{`${title} | Tricks Web`}</title>
+	</head>
+	<body>
+    <Navbar/>
+    <div class="container">
+      <slot name="topic-navbar"/>
+      <main class="content-container">
+        <a class="arrow" href={href}>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-left" width="30" height="30" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M5 12l14 0"></path>
+            <path d="M5 12l6 6"></path>
+            <path d="M5 12l6 -6"></path>
+          </svg>
+        </a>
+        <slot/>
+      </main>
+    </div>
+    <Footer/>
+	</body>
+</html>
+
+<style define:vars={{colorLang}}>
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 10px;
+    display: grid;
+    grid-template-columns: 250px calc(100% - 250px);
+    gap: 15px;
+  }
+  
+  .arrow {
+    display: none;
+    color: rgb(var(--title-color));
+  }
+
+  .arrow:hover {
+    color: rgb(var(--title-color) / 0.7);
+  }
+
+  .content-container {
+    width: 100%;
+    min-height: 80vh;
+    padding: 30px 10px 20px 10px;
+    color: rgb(var(--title-color));
+  }
+
+  .content-container :global(h1){
+    font-size: var(--text-4);
+    color: var(--colorLang);
+    border-bottom: 1px solid rgb(var(--title-color));
+    padding: 20px 0 10px 0;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+  }
+
+  .content-container :global(:is(h2, h3, h4, h5)){
+    color: inherit;
+    font-weight: 600;
+    font-size: var(--text-2);
+  }
+  .content-container :global(:is(h2, h3, h4, h5)::first-letter){
+    text-transform: uppercase;
+  }
+  
+  .content-container > :global(p) {
+    font-size: 18px;
+    color: inherit;
+    margin-bottom: 10px;
+  }
+  .content-container :global(a) {
+    font-size: inherit;
+    color: rgb(var(--second-color));
+  }
+  .content-container :global(a[href^="https://"]::after) {
+    content: url("/src/icons/external-link.svg");
+    width: 14px;
+    height: 21px;
+  }
+  
+  .content-container :global(a):hover {
+    color: rgb(var(--second-color)/.7);
+    text-decoration: none;
+  }
+
+  .content-container :global(ul){
+    color: inherit;
+    font-size: 18px;
+    margin: 10px;
+    margin-left: 30px;
+    list-style-type: square;
+  }
+
+  .content-container :global(li){
+    color: inherit;
+    padding: 0 0 0 10px;
+    margin-bottom: 10px;
+  }
+  .content-container :global(li):first-letter {
+    text-transform: uppercase;
+  }
+
+  .content-container :global(b){
+    color: rgb(var(--second-color));
+    font-weight: 600;
+  }
+  
+  @media (width < 771px) {
+    .container {
+      display: block;
+    }
+    .content-container{
+      padding: 30px 0 20px 0;
+    }
+  }
+
+  @media (height > 870px) {
+    .container {
+      min-height: 80vh;
+    }
+  }
+</style>
+
+<script>
+  const arrow = (document.querySelector(".arrow") as HTMLElement)
+  const pages = ["/css","/html","/javascript","/git"]
+  if(!pages.includes(window.location.pathname)){
+    arrow.style.display = "inline-block"
+  }
+</script>

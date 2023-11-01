@@ -1,0 +1,36 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro"
+---
+
+<LayoutCSS title="Grid Responsiva">
+  <h1>Grid Responsiva</h1>
+  
+  <MyCode code={`    
+<div class="grid-responsive">
+  <div class="item">item 1</div>
+  <div class="item">item 2</div>
+  <div class="item">item 3</div>
+  <div class="item">item 4</div>
+  <div class="item">item 5</div>
+  <div class="item">item 6</div>
+  <div class="item">item 7</div>
+</div>          
+
+<style>
+
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+}
+
+.item {
+  width: 100%;
+  min-height: 200px;
+}
+
+</style>
+  `}/>
+
+</LayoutCSS>
