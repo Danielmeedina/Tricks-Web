@@ -1,0 +1,94 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro";
+---
+
+<LayoutCSS title="Efecto ripple">
+  <h1>Efecto ripple</h1>
+
+  <MyCode
+    code={`    
+<section>
+  <a href="#" class="ripple">inicio</a>
+  <div class="box ripple"> hola </div>
+  <button class="ripple">x</button>   
+</section>    
+
+<style>
+
+  section{
+    display: grid;
+    place-items: center;
+    height: 90vh;
+  }
+  .ripple{
+    overflow: hidden;
+    position: relative;
+  }
+  .effect{
+    position: absolute;
+    background-color: black;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border-radius: 50%;
+    animation: effect .5s linear infinite;
+  }
+  @keyframes effect {
+    0%{
+      width: 0;
+      height: 0;
+      opacity: 0.2;
+    }
+    100%{
+      width: 700px;
+      height: 700px;
+      opacity: 0.2;
+    }
+  }
+
+  a{
+    width: 200px;
+    background-color: rgba(102, 51, 153, 0.342);
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .box{
+    width: 300px;
+    height: 100px;
+    background-color: royalblue;
+  }
+  button{
+    width: 150px;
+    height: 50px;
+  }
+
+</style>
+
+<script>
+
+  const buttons = document.querySelectorAll('.ripple');
+
+  buttons.forEach(btn => {
+    
+    // puedes cambair el "click" por "mouseenter" para no tener la necesidad 
+    // de hacer click para ver el efecto
+    btn.addEventListener("click", function(e){
+      let x = e.clientX - e.target.offsetLeft;
+      let y = e.clientY - e.target.offsetTop;
+
+      let ripples = document.createElement("span");
+      ripples.style.left = x +"px";
+      ripples.style.top = y +"px";
+      ripples.classList.add("effect");
+      this.appendChild(ripples);
+
+      setTimeout(() => {
+        ripples.remove()
+      }, 500);
+    })
+  })
+
+</script>
+  `}
+  />
+</LayoutCSS>

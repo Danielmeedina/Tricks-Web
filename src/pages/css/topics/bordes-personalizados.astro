@@ -1,18 +1,25 @@
 ---
 import Hint from "@/components/Hint.astro";
 import MyCode from "@components/MyCode.astro";
-import LayoutCSS from "@layouts/LayoutCSS.astro"
+import LayoutCSS from "@layouts/LayoutCSS.astro";
 ---
 
 <LayoutCSS title="Bordes personalizados">
-    <h1>Bordes personalizados</h1>
-    <p>Puedes personalizar los bordes de tus cajas con la imagen que quieras.</p>
+  <h1>Bordes personalizados</h1>
+  <p>Puedes personalizar los bordes de tus cajas con la imagen que quieras.</p>
 
-    <Hint>
-      <p>se recomienda que sea una imagen hecha para ello, preferiblemente con fondo transparente, por ejemplo imagenes de <a href="https://www.bing.com/images/search?q=border&amp;qft=+filterui:photo-transparent&amp;form=IRFLTR&amp;first=1&amp;cw=1351&amp;ch=657" target="_blank" rel="noopener noreferrer">este tipo</a></p>
-    </Hint>
-  
-    <MyCode code={`
+  <Hint>
+    <p>
+      se recomienda que sea una imagen hecha para ello, preferiblemente con
+      fondo transparente, por ejemplo imagenes de <a
+        href="https://www.bing.com/images/search?q=border&qft=+filterui:photo-transparent&form=IRFLTR&first=1&cw=1351&ch=657"
+        target="_blank"
+        rel="noopener noreferrer">este tipo</a>
+    </p>
+  </Hint>
+
+  <MyCode
+    code={`
 <div>
   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo ratione minima 
   volupta Praesentiumatis atque vero minus omnis molestias fuga ut inventoreesse 
@@ -23,24 +30,25 @@ import LayoutCSS from "@layouts/LayoutCSS.astro"
 <style>
 
 div{
-display: flex;
-justify-content: center;
-align-items: center;
-width: 100%;
-max-width: 300px;
-min-height: 300px;
-margin: 30px 0px;
-border-image-source: url(https://cdn.pixabay.com/photo/2016/02/19/15/29/frame-1210511_640.png);  
-border-image-repeat: repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  min-height: 300px;
+  margin: 30px 0px;
+  border-image-source: url(https://cdn.pixabay.com/photo/2016/02/19/15/29/frame-1210511_640.png);  
+  border-image-repeat: repeat;
 
-/* Dependiendo de la imagen y el contenido de la caja, estos valores deben cambiarse para que se ajusten bien a la imagen. */
+  /* Dependiendo de la imagen y el contenido de la caja, estos valores deben cambiarse para que se ajusten bien a la imagen. */
 
-padding: 10px 10px;
-border-image-slice: 15%;
-border-image-width: 15%;
-border-image-outset: 15px;
+  padding: 10px 10px;
+  border-image-slice: 15%;
+  border-image-width: 15%;
+  border-image-outset: 15px;
 }
 
 </style>      
-          `} />
+          `}
+  />
 </LayoutCSS>

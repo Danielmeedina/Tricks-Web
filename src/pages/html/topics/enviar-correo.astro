@@ -1,0 +1,40 @@
+---
+import Warning from "@/components/Warning.astro";
+import LayoutHTML from "@layouts/LayoutHTML.astro";
+import MyCode from "@components/MyCode.astro";
+---
+
+<LayoutHTML title="Enviar Correo">
+  <h1>Enviar Correo</h1>
+  <p>Envía un correo electrónico fácil y rápidamente con solo HTML.</p>
+  <Warning>
+    <p>esto SÓLO funciona para correos electrónicos de Gmail</p>
+  </Warning>
+
+  <MyCode
+    code={`
+<a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&source=mailto&to=tu@correo.com" target="_blank">
+  Go Email 
+</a>  
+  `}
+  />
+  <h2>Formsubmit</h2>
+  <p>
+    Puedes usar <a
+      href="https://formsubmit.co/"
+      target="_blank"
+      rel="noopener noreferrer">formsubmit</a
+    >
+     para recibir correos rápidamente, revisa su documentacion para saber como
+    utilizarlo
+  </p>
+  <MyCode
+    code={`
+<form action="https://formsubmit.co/tu@correo.com" method="POST">
+     <input type="text" name="name" required>
+     <input type="email" name="email" required>
+     <button type="submit">Send</button>
+</form>
+  `}
+  />
+</LayoutHTML>

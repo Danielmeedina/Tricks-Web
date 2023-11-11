@@ -1,12 +1,13 @@
 ---
 import MyCode from "@components/MyCode.astro";
-import LayoutCSS from "@layouts/LayoutCSS.astro"
+import LayoutCSS from "@layouts/LayoutCSS.astro";
 ---
 
 <LayoutCSS title="Bordes con degradados">
-    <h1>Bordes con degradados</h1>
-  
-    <MyCode code={`    
+  <h1>Bordes con degradados</h1>
+
+  <MyCode
+    code={`    
 <div class="box">welcome</div>
 
 <style>
@@ -24,10 +25,12 @@ import LayoutCSS from "@layouts/LayoutCSS.astro"
 }
 
 </style>
-  `}/>
-  <h2>Otra froma de hacerlo</h2>
-  
-  <MyCode code={`    
+  `}
+  />
+  <h2>Otra forma de hacerlo</h2>
+
+  <MyCode
+    code={`    
 <div class="gradientcard">
   <div class="gradientcard-body">
     Welcome
@@ -55,10 +58,12 @@ import LayoutCSS from "@layouts/LayoutCSS.astro"
 }
 
 </style>  
-  `}/>
+  `}
+  />
   <h2>Degradado Animado</h2>
-  
-  <MyCode code={`    
+
+  <MyCode
+    code={`    
 <div class="card">Welcomee</div>
   
 <style>
@@ -84,6 +89,6 @@ import LayoutCSS from "@layouts/LayoutCSS.astro"
 }
 
 </style>
-  `}/>
-  
+  `}
+  />
 </LayoutCSS>
