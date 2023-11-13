@@ -1,0 +1,49 @@
+---
+interface Props {
+  href: string;
+}
+const { href } = Astro.props;
+---
+
+<a class="arrow" href={href}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon icon-tabler icon-tabler-arrow-left"
+    width="30"
+    height="30"
+    viewBox="0 0 24 24"
+    stroke-width="2"
+    stroke="currentColor"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path d="M5 12l14 0"></path>
+    <path d="M5 12l6 6"></path>
+    <path d="M5 12l6 -6"></path>
+  </svg>
+</a>
+
+<style>
+  .arrow {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    display: none;
+    height: 35px;
+    max-width: 30px;
+    color: rgb(var(--title-color));
+  }
+  .arrow:hover {
+    color: rgb(var(--title-color) / 0.7);
+  }
+</style>
+
+<script>
+  const arrow = document.querySelector(".arrow") as HTMLElement;
+  const pages = ["/css/", "/html/", "/javascript/", "/git/"];
+  if (!pages.includes(window.location.pathname)) {
+    arrow.style.display = "block";
+  }
+</script>

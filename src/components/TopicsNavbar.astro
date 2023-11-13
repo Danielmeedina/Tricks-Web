@@ -1,42 +1,77 @@
 ---
-const {topics} = Astro.props
+const { topics } = Astro.props;
 ---
 
 <aside class="nav-container">
   <nav class="navbar">
     <header class="container-input">
       <button class="btn-close">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#e70404" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon icon-tabler icon-tabler-x"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="#e70404"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
           <path d="M18 6l-12 12"></path>
           <path d="M6 6l12 12"></path>
         </svg>
       </button>
-      <input class="input" placeholder="Presiona 'Enter ↵' para buscar 🔍" type="text">
+      <input
+        class="input"
+        placeholder="'Ctrl + Enter↵' para buscar   🔍"
+        type="text"
+      />
       <span class="input-border"></span>
     </header>
     <div class="mensaje">
-      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-apps-off" width="60" height="60" viewBox="0 0 24 24" stroke-width="2" stroke="#0f0f0f" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-apps-off"
+        width="60"
+        height="60"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="#ffffff"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-        <path d="M8 4h1a1 1 0 0 1 1 1v1m-.29 3.704a1 1 0 0 1 -.71 .296h-4a1 1 0 0 1 -1 -1v-4c0 -.276 .111 -.525 .292 -.706"></path>
-        <path d="M18 14h1a1 1 0 0 1 1 1v1m-.29 3.704a1 1 0 0 1 -.71 .296h-4a1 1 0 0 1 -1 -1v-4c0 -.276 .111 -.525 .292 -.706"></path>
-        <path d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"></path>
+        <path
+          d="M8 4h1a1 1 0 0 1 1 1v1m-.29 3.704a1 1 0 0 1 -.71 .296h-4a1 1 0 0 1 -1 -1v-4c0 -.276 .111 -.525 .292 -.706"
+        ></path>
+        <path
+          d="M18 14h1a1 1 0 0 1 1 1v1m-.29 3.704a1 1 0 0 1 -.71 .296h-4a1 1 0 0 1 -1 -1v-4c0 -.276 .111 -.525 .292 -.706"
+        ></path>
+        <path
+          d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z"
+        ></path>
         <path d="M14 7h6"></path>
         <path d="M17 4v6"></path>
         <path d="M3 3l18 18"></path>
       </svg>
       <p>No hay resultados</p>
+      <p>Intenta con otra busqueda</p>
     </div>
     <ul>
       {
         topics.map((topic) => {
-          let dividetext = topic.url.split('/');
+          let dividetext = topic.url.split("/");
           let result = dividetext[dividetext.length - 1];
           return (
             <li class="topic">
-              <a href={topic.url}>{result.replace(/-/g, ' ')}</a>
+              <a href={topic.url} title={result.replace(/-/g, " ")}>
+                {result.replace(/-/g, " ")}
+              </a>
             </li>
-            )
+          );
         })
       }
     </ul>
@@ -44,7 +79,18 @@ const {topics} = Astro.props
 </aside>
 <button class="show-nav">
   <span>Menu</span>
-  <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon icon-tabler icon-tabler-search"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    stroke-width="2"
+    stroke="#000000"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
     <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0"></path>
     <path d="M21 21l-6 -6"></path>
@@ -52,47 +98,48 @@ const {topics} = Astro.props
 </button>
 
 <style>
-  .nav-container{
+  .nav-container {
     padding: 20px 0;
   }
-  .navbar{
+  .navbar {
+    --navbar-color: 30 30 30;
     position: sticky;
     top: 0;
     width: 100%;
-    height: 90vh;
+    height: 100vh;
     max-height: 630px;
     display: flex;
     flex-flow: column nowrap;
     overflow-y: auto;
-    overscroll-behavior: contain;
-    background-color: #181818;
+    background-color: rgb(var(--bg-color));
     border-radius: 5px;
   }
 
   .navbar::-webkit-scrollbar {
     width: 3px;
-    background-color: transparent
-  }        
+    background-color: rgb(var(--navbar-color));
+  }
 
   .navbar::-webkit-scrollbar-thumb {
     background-color: transparent;
     border-radius: 3px;
   }
-  
-  .navbar:hover::-webkit-scrollbar-thumb{
-    background-color: rgb(var(--title-color));
+
+  .navbar:hover::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--text-color));
   }
 
   .container-input {
     position: sticky;
     top: 0;
     width: 100%;
-    background-color: #181818;
+    background-color: rgb(var(--bg-color));
     display: flex;
     flex-flow: column nowrap;
   }
-  
-  .show-nav, .btn-close{
+
+  .show-nav,
+  .btn-close {
     display: none;
   }
 
@@ -106,7 +153,7 @@ const {topics} = Astro.props
     padding-block: 0.9em;
     border: none;
     border-bottom: 1px solid rgb(var(--text-color));
-    transition: all .5s ease;
+    transition: all 0.5s ease;
   }
 
   .input-border {
@@ -125,10 +172,10 @@ const {topics} = Astro.props
   }
 
   .input:focus ~ .input-border {
-   width: 100%;
+    width: 100%;
   }
 
-  .mensaje{
+  .mensaje {
     display: none;
     justify-content: center;
     align-items: center;
@@ -138,23 +185,19 @@ const {topics} = Astro.props
     margin: 20px auto;
     border-radius: 5px;
   }
-  .mensaje p{
+  .mensaje p {
     color: rgb(var(--title-color));
   }
-  
-  .navbar ul{
+
+  .navbar ul {
     padding: 5px;
   }
-  
-  .topic{
-    color: rgb(var(--text-color))
-  }
-  
-  .topic:last-child{
-    margin-bottom: 20px;
+
+  .topic {
+    color: rgb(var(--text-color));
   }
 
-  .topic a{
+  .topic a {
     display: block;
     padding: 10px 0 10px 5px;
     text-decoration: none;
@@ -163,23 +206,24 @@ const {topics} = Astro.props
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  .topic a:hover{
-    color: rgb(var(--title-color));
-  }
-  
-  .topic a.active{
-    color: rgb(var(--second-color));
-    background-color: rgb(var(--bg-color) / .4);
     border-radius: 5px;
   }
 
-  .filter{
+  .topic a:hover {
+    color: rgb(var(--title-color));
+    background-color: rgb(var(--navbar-color) / 0.5);
+  }
+
+  .topic a.active {
+    color: rgb(var(--second-color));
+    background-color: rgb(var(--navbar-color));
+  }
+
+  .filter {
     display: none;
   }
-  @media (width < 771px){
-    .show-nav{
+  @media (width < 771px) {
+    .show-nav {
       position: fixed;
       display: flex;
       justify-content: center;
@@ -189,15 +233,15 @@ const {topics} = Astro.props
       right: 15px;
       background-color: rgb(var(--title-color));
       color: rgb(var(--bg-main));
-      padding:5px;
+      padding: 5px;
       border: 1px solid transparent;
       border-radius: 5px;
     }
-    .show-nav span{
+    .show-nav span {
       font-size: 15px;
       font-weight: 600;
     }
-    .nav-container{
+    .nav-container {
       position: fixed;
       display: none;
       inset: 0;
@@ -206,12 +250,12 @@ const {topics} = Astro.props
       background-color: transparent;
       padding: 0 20px;
     }
-    .nav-container.show{
+    .nav-container.show {
       display: flex;
       justify-content: center;
       align-items: center;
     }
-    .navbar{
+    .navbar {
       position: relative;
       width: clamp(280px, 100%, 350px);
       height: 90vh;
@@ -221,11 +265,11 @@ const {topics} = Astro.props
       background-color: #222222;
       border-radius: 5px;
     }
-    .navbar ul{
+    .navbar ul {
       height: 100%;
     }
 
-    .btn-close{
+    .btn-close {
       display: block;
       align-self: flex-end;
       margin: 5px 5px;
@@ -236,43 +280,43 @@ const {topics} = Astro.props
 </style>
 
 <script>
-  const input = (document.querySelector(".input") as HTMLInputElement);
+  const input = document.querySelector(".input") as HTMLInputElement;
   const topics = document.querySelectorAll(".topic");
   const links = document.querySelectorAll(".topic a");
-  const mensaje = (document.querySelector(".mensaje") as HTMLElement);
-  const navbar = document.querySelector(".nav-container")
-  const mostrarNav = document.querySelector(".show-nav")
+  const mensaje = document.querySelector(".mensaje") as HTMLElement;
+  const navbar = document.querySelector(".nav-container");
+  const mostrarNav = document.querySelector(".show-nav");
 
   mostrarNav.addEventListener("click", () => {
-    navbar.classList.add("show")
-    input.focus()
-  })
+    navbar.classList.add("show");
+    input.focus();
+  });
   navbar.addEventListener("click", (e: MouseEvent) => {
-     const target = e.target as Element;
+    const target = e.target as Element;
 
-    if(target.matches(".btn-close svg")){
+    if (target.matches(".btn-close svg")) {
       navbar.classList.remove("show");
     }
-    if(target.matches(".nav-container")){
-      navbar.classList.remove("show")
+    if (target.matches(".nav-container")) {
+      navbar.classList.remove("show");
     }
-    if(target.matches(".topic a")){
-      navbar.classList.remove("show")
+    if (target.matches(".topic a")) {
+      navbar.classList.remove("show");
     }
-    if(target.matches(".navbar ul")){
-      navbar.classList.remove("show")
-    }
-  })
-  
-  links.forEach(link => {
-    if (link.getAttribute('href') === window.location.pathname) {
-      link.classList.add('active');
+    if (target.matches(".navbar ul")) {
+      navbar.classList.remove("show");
     }
   });
 
-  document.addEventListener("keyup", (e: KeyboardEvent) =>{
-    if(e.key === "Enter") (input as HTMLInputElement).focus();
-  })
+  links.forEach((link) => {
+    if (link.getAttribute("href") === window.location.pathname) {
+      link.classList.add("active");
+    }
+  });
+
+  document.addEventListener("keyup", (e: KeyboardEvent) => {
+    if (e.ctrlKey && e.key === "Enter") (input as HTMLInputElement).focus();
+  });
 
   input.addEventListener("keyup", (e: Event) => {
     const target = e.target as HTMLInputElement;
@@ -280,7 +324,11 @@ const {topics} = Astro.props
       let elementosFiltrados = 0;
 
       topics.forEach((el) => {
-        el.firstChild.textContent.toLowerCase().includes(target.value.toLowerCase()) ? el.classList.remove("filter") : el.classList.add("filter");
+        el.firstChild.textContent
+          .toLowerCase()
+          .includes(target.value.toLowerCase())
+          ? el.classList.remove("filter")
+          : el.classList.add("filter");
 
         if (el.classList.contains("filter")) {
           elementosFiltrados++;
@@ -294,5 +342,4 @@ const {topics} = Astro.props
       }
     }
   });
-
 </script>

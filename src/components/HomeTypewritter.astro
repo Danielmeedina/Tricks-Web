@@ -1,0 +1,43 @@
+<span class="typewritter">con</span>
+
+<style>
+  .typewritter {
+    color: transparent;
+    font-size: var(--text-3);
+    font-weight: 900;
+    text-transform: uppercase;
+    text-wrap: balance;
+    -webkit-text-stroke: 2px rgb(var(--second-color));
+  }
+</style>
+
+<script>
+  const dynamicText = document.querySelector(".typewritter");
+  const words = ["Html", "css", "git", "javascript"];
+
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  const typeEffect = () => {
+    const currentWord = words[wordIndex];
+    const currentChar = currentWord.substring(0, charIndex);
+    dynamicText.textContent = `con ${currentChar}`;
+
+    if (!isDeleting && charIndex < currentWord.length) {
+      charIndex++;
+      setTimeout(typeEffect, 100);
+      // 200
+    } else if (isDeleting && charIndex > 0) {
+      charIndex--;
+      setTimeout(typeEffect, 100);
+      // 100
+    } else {
+      isDeleting = !isDeleting;
+      wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
+      setTimeout(typeEffect, 1000);
+      // 1200
+    }
+  };
+  typeEffect();
+</script>

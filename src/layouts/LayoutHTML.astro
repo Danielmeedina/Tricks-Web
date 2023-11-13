@@ -9,7 +9,7 @@ const topics = await Astro.glob(`../pages/html/topics/*.astro`);
 import LayoutTopic from "@layouts/LayoutTopic.astro"
 import TopicsNavbar from "@components/TopicsNavbar.astro";
 ---
-<LayoutTopic title={title} colorLang="#E44D26" href="/html">
+<LayoutTopic title={title} colorLang="#E44D26" href="/html/">
   <TopicsNavbar topics={topics} slot="topic-navbar"/>
   <slot/>
 </LayoutTopic>

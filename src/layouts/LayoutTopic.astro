@@ -1,15 +1,15 @@
 ---
+import Navbar from "@components/Navbar.astro";
+import Footer from "@components/Footer.astro";
+import "../styles/GlobalStyle.css";
+import Arrow from "@/components/Arrow.astro";
+
 interface Props {
   title: string;
   colorLang: string;
   href: string;
 }
-
 const { title, colorLang, href } = Astro.props;
-
-import Navbar from "@components/Navbar.astro";
-import Footer from "@components/Footer.astro";
-import "../styles/GlobalStyle.css";
 ---
 
 <!doctype html>
@@ -26,25 +26,7 @@ import "../styles/GlobalStyle.css";
     <div class="container">
       <slot name="topic-navbar" />
       <main class="content-container">
-        <a class="arrow" href={href}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="icon icon-tabler icon-tabler-arrow-left"
-            width="30"
-            height="30"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            fill="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M5 12l14 0"></path>
-            <path d="M5 12l6 6"></path>
-            <path d="M5 12l6 -6"></path>
-          </svg>
-        </a>
+        <Arrow href={href} />
         <slot />
       </main>
     </div>
@@ -62,27 +44,19 @@ import "../styles/GlobalStyle.css";
     gap: 15px;
   }
 
-  .arrow {
-    display: none;
-    color: rgb(var(--title-color));
-  }
-
-  .arrow:hover {
-    color: rgb(var(--title-color) / 0.7);
-  }
-
   .content-container {
     width: 100%;
     min-height: 80vh;
     padding: 30px 0 20px;
     color: rgb(var(--title-color));
+    position: relative;
   }
 
   .content-container :global(h1) {
     font-size: var(--text-4);
     color: var(--colorLang);
     border-bottom: 2px solid var(--colorLang);
-    padding: 5px 0;
+    padding: 15px 0 5px;
     margin-bottom: 30px;
     text-transform: capitalize;
   }
@@ -154,11 +128,3 @@ import "../styles/GlobalStyle.css";
     }
   }
 </style>
-
-<script>
-  const arrow = document.querySelector(".arrow") as HTMLElement;
-  const pages = ["/css", "/html", "/javascript", "/git"];
-  if (!pages.includes(window.location.pathname)) {
-    arrow.style.display = "inline-block";
-  }
-</script>
