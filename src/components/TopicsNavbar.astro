@@ -67,7 +67,7 @@ const { topics } = Astro.props;
           let result = dividetext[dividetext.length - 1];
           return (
             <li class="topic">
-              <a href={topic.url} title={result.replace(/-/g, " ")}>
+              <a href={`${topic.url}/`} title={result.replace(/-/g, " ")}>
                 {result.replace(/-/g, " ")}
               </a>
             </li>
@@ -236,6 +236,7 @@ const { topics } = Astro.props;
       padding: 5px;
       border: 1px solid transparent;
       border-radius: 5px;
+      z-index: 10;
     }
     .show-nav span {
       font-size: 15px;
@@ -262,7 +263,6 @@ const { topics } = Astro.props;
       max-height: 80vh;
       overflow-y: auto;
       overscroll-behavior: contain;
-      background-color: #222222;
       border-radius: 5px;
     }
     .navbar ul {

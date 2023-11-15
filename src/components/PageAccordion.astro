@@ -128,3 +128,17 @@ const {title, utilsPages} = Astro.props
     text-transform: uppercase;
   }
 </style>
+
+<script>
+  const details = document.querySelectorAll('details');
+
+  details.forEach(detail => {
+    detail.addEventListener('click', () => {
+      details.forEach(otherdetail => {
+        if (otherdetail !== detail) {
+          otherdetail.removeAttribute('open');
+        }
+      });
+    });
+  });
+</script>
