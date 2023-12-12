@@ -1,18 +1,28 @@
 ---
 import MyCode from "@components/MyCode.astro";
 import Warning from "@components/Warning.astro";
-import LayoutCSS from "@layouts/LayoutCSS.astro"
+import LayoutCSS from "@layouts/LayoutCSS.astro";
 ---
 
 <LayoutCSS title="Intersection observer">
   <h1>Intersection observer</h1>
-  <p>Puedes usar la API del Intersection observer solo con CSS de manera fácil y rápida.</p>
+  <p>
+    Puedes usar la API del Intersection observer solo con CSS de manera fácil y
+    rápida.
+  </p>
 
   <Warning>
-    <p>Actualmente, no es 100% compatible con todos los navegadores, puedes ver <a href="https://caniuse.com/?search=%20view-timeline-name" target="_blank" rel="noopener noreferrer">aquí</a> en que navegadores si funciona</p>
+    <p>
+      Actualmente, no es 100% compatible con todos los navegadores, puedes ver <a
+        href="https://caniuse.com/?search=animation-timeline"
+        target="_blank"
+        rel="noopener noreferrer">aquí</a
+      > en que navegadores si funciona
+    </p>
   </Warning>
 
-  <MyCode code={`
+  <MyCode
+    code={`
 <div></div>
 <div></div>
 <div></div>
@@ -25,8 +35,7 @@ div{
   height: 500px;
   margin-bottom: 10px;
   background-color: red;
-  view-timeline-name: --revealing-image;
-  animation-timeline: --revealing-image;
+  animation-timeline: view();
   animation-fill-mode: both;
 }
 
@@ -65,6 +74,6 @@ div:nth-child(odd){
 }
   
 </style>   
-  `}/>
-
+  `}
+  />
 </LayoutCSS>
