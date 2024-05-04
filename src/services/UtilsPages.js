@@ -120,6 +120,11 @@ export const ComponentsPages = [
     url: "https://uiverse.io/",
     text: "Aquí encontrarás cientos de componentes listos para usar",
   },
+  {
+    title: "React Skeleton",
+    url: "https://skeletonreact.com/",
+    text: "Te permite crear skeleton para tus aplicaciones de react, también encontrarás decenas de ejemplos para usar rápidamente",
+  },
 ];
 
 export const IconPages = [

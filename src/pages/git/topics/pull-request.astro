@@ -1,36 +1,96 @@
 ---
-import LayoutGit from "@layouts/LayoutGit.astro"
+import LayoutGit from "@layouts/LayoutGit.astro";
 ---
 
 <LayoutGit title="Pull request">
   <h1>Pull request</h1>
   <p>
-    siguiendo estos pasos podrás realizar una colaboración a un repositorio, o lo que también se conoce como pull request
+    siguiendo estos pasos podrás realizar una colaboración a un repositorio, o
+    lo que también se conoce como pull request:
   </p>
   <ul>
-    <li>Vamos al repositorio al que queremos contribuir y hacemos un fork</li>
-    
-    <li>El repositorio al que acabamos hacer fork lo clonamos en nuestra pc <b>git clone https://github.com/user/repositorioFork.git</b></li>
-    
-    <li>cambiamos el nombre del remoto de nuestro repositorio de origen clonado a fork <b>git remote rename origin fork</b></li>
-    
-    <li >agregamos el remoto del repositorio original <b>git remote add origin https://github.com/usuario/repositorio.git</b></li>
-    
-    <li>en nuestro repositorio clonado creamos una nueva rama y realizamos los cambios o ayuda según corresponda <b>git checkout -b rama_ayuda</b></li>
-    
-    <li>hacemos los respectivos <b>git add</b> y <b>git commit</b> para luego súbirlo al repositorio clonado<b>git push fork rama_ayuda</b></li>
-    
-    <li>solicita el pull request a través de github y espera a que sea aceptada.</li>
-    
-    <li>una vez que el pull request sea aceptado por el propietario del repositorio original, cambiamos a la rama principal para descargar el repositorio original y todos los cambios que se han realizado <b>git checkout main</b> <b>pull origin main</b></li>
-    
-    <li>guardamos los cambios que trajimos del repositorio original y los enviamos a nuestro repositorio clonado <b>git push fork main</b></li>
-    
-    <li>eliminamos la rama que creamos para contribuir a este repositorio <b>git branch -d rama_ayuda</b></li>
-    
-    <li>eliminamos la rama remota <b>git push fork --delet  e rama_ayuda</b></li>
+    <li>
+      <p>Vamos al repositorio al que queremos contribuir y hacemos un fork</p>
+    </li>
 
+    <li>
+      <p>
+        Vamos a nuestro nuevo repositorio (resultado de hacer el fork) y lo
+        clonamos en nuestra PC
+        <b class="code"
+          >git clone https://github.com/tu_usuario/repositorioFork.git</b
+        >
+      </p>
+    </li>
 
+    <li>
+      <p>
+        Agregamos el repositorio original como un remoto llamado upstream: <b
+          class="code"
+          >git remote add upstream
+          https://github.com/usuario/repositorio_original.git</b
+        >
+      </p>
+    </li>
+
+    <li>
+      <p>
+        En nuestro repositorio clonado creamos una nueva rama <b class="code"
+          >git checkout -b "rama_ayuda"</b
+        >
+      </p>
+    </li>
+
+    <li>
+      <p>Realizamos los cambios y/o ayudas solicitadas</p>
+    </li>
+
+    <li>
+      <p>
+        Hacemos los respectivos <b class="code">git add .</b> y <b class="code"
+          >git commit -m "tu_mensaje"</b
+        >
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Subimos los cambios a nuestro repositorio remoto <b class="code"
+          >git push origin rama_ayuda</b
+        >
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Solicita el pull request a través de github y espera a que sea aceptada.
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Una vez que el pull request sea aceptado por el propietario del
+        repositorio original, cambiamos a la rama principal para descargar el
+        repositorio original y todos los cambios que se han realizado <b
+          class="code">git checkout main</b
+        > y
+        <b class="code">git pull</b>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <b>(opcional)</b> Eliminamos la rama que creamos para contribuir a este repositorio
+        <b class="code">git branch -d rama_ayuda</b>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        <b>(opcional)</b> Eliminamos la rama remota <b class="code"
+          >git push origin --delete rama_ayuda</b
+        >
+      </p>
+    </li>
   </ul>
-
 </LayoutGit>

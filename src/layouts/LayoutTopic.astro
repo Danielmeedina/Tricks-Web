@@ -64,14 +64,16 @@ const { title, colorLang, href } = Astro.props;
   .content-container :global(:is(h2, h3, h4, h5)) {
     color: inherit;
     font-weight: 600;
-    font-size: var(--text-2);
+    font-size: var(--text-1);
   }
   .content-container :global(:is(h2, h3, h4, h5)::first-letter) {
     text-transform: uppercase;
   }
 
-  .content-container > :global(p) {
+  .content-container :global(p) {
     font-size: 18px;
+    font-weight: 300;
+    line-height: 1.4;
     color: inherit;
     margin-bottom: 10px;
   }
@@ -94,23 +96,31 @@ const { title, colorLang, href } = Astro.props;
   .content-container :global(ul) {
     color: inherit;
     font-size: 18px;
-    margin: 10px;
     margin-left: 30px;
     list-style-type: square;
   }
 
   .content-container :global(li) {
     color: inherit;
-    padding: 0 0 0 10px;
+    font-weight: 300;
     margin-bottom: 10px;
   }
-  .content-container :global(li):first-letter {
-    text-transform: uppercase;
+
+  .content-container :global(strong) {
+    color: rgb(var(--second-color));
+    font-weight: 600;
   }
 
   .content-container :global(b) {
-    color: rgb(var(--second-color));
-    font-weight: 600;
+    font-weight: 500;
+  }
+
+  .content-container :global(b.code) {
+    background-color: rgb(61, 61, 61);
+    padding: 4px;
+    margin: 2px;
+    border-radius: 4px;
+    word-wrap: break-word;
   }
 
   @media (width < 771px) {

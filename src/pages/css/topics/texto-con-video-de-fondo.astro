@@ -1,16 +1,17 @@
 ---
-import Warning from "@components/Warning.astro";
 import MyCode from "@components/MyCode.astro";
-import LayoutCSS from "@layouts/LayoutCSS.astro"
+import LayoutCSS from "@layouts/LayoutCSS.astro";
+import Hint from "@/components/Hint.astro";
 ---
 
 <LayoutCSS title="Texto con video de fondo">
   <h1>Texto con video de fondo</h1>
-  <Warning>
+  <Hint>
     <p>El video debe estar guardado en tu proyecto, no sirven links externos</p>
-  </Warning>
-  
-  <MyCode code={`
+  </Hint>
+
+  <MyCode
+    code={`
 <section class="container">
   <video src="./videos/video.mp4" autoplay loop muted></video>
   <h1 class="title">Hola Mundo</h1>
@@ -54,6 +55,6 @@ mix-blend-mode: screen;
 }
 
 </style>        
-  `}/>
-
+  `}
+  />
 </LayoutCSS>

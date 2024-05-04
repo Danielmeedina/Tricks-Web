@@ -1,0 +1,42 @@
+---
+import LayoutGit from "@layouts/LayoutGit.astro";
+import Warning from "@components/Warning.astro";
+---
+
+<LayoutGit title="Eliminar commit">
+  <h1>Eliminar commit</h1>
+  <Warning>
+    Ten en cuenta que estos comandos tienen que ejecutarse en tu <b
+      >repositorio local</b
+    >, una vez hagas un <b>git push</b> de ese commit ya no es recomendable hacer
+    uso de estos comandos.
+  </Warning>
+  <h2>git reset --hard HEAD~1</h2>
+  <p>
+    Deshace el último commit en la rama actual, restableciendo la rama y el
+    índice de trabajo al estado inmediatamente anterior al último commit. Este
+    comando descarta permanentemente los cambios del último commit y reescribe
+    la historia del repositorio. Ten cuidado al usarlo, especialmente si ya has
+    compartido estos cambios en un repositorio remoto.
+  </p>
+
+  <h2>git reset --hard &lt;commit_hash&gt;</h2>
+  <p>
+    Reinicia la rama actual y el índice de trabajo al estado exacto del commit
+    especificado por &lt;commit_hash&gt;, descartando cualquier cambio no
+    comprometido y reescribiendo la historia del repositorio. Úsalo con
+    precaución, especialmente si ya has compartido estos cambios en un
+    repositorio remoto.
+  </p>
+
+  <ul>
+    <li>
+      <b>git log --oneline</b>: con este comando podrás obtener un listado de
+      todos tus commits y sus respectivos hash
+    </li>
+    <li>
+      <b>git reset --hard &lt;commit_hash&gt;</b>: usa el hash obtenido para
+      hacer uso de este comando
+    </li>
+  </ul>
+</LayoutGit>

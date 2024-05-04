@@ -11,15 +11,17 @@ import LayoutCSS from "@layouts/LayoutCSS.astro";
   <Hint>
     <p>
       se recomienda que sea una imagen hecha para ello, preferiblemente con
-      fondo transparente, por ejemplo imagenes de <a
-        href="https://www.bing.com/images/search?q=border&qft=+filterui:photo-transparent&form=IRFLTR&first=1&cw=1351&ch=657"
+      fondo transparente, por ejemplo imagenes de tipo <a
+        href="https://www.google.com/search?q=border%20design&tbm=isch&tbs=ic:trans&hl=es-419&sa=X&ved=0CAMQpwVqFwoTCMCTuvWu3YMDFQAAAAAdAAAAABAD&biw=1349&bih=661"
         target="_blank"
-        rel="noopener noreferrer">este tipo</a>
+        rel="noopener noreferrer">border design</a
+      >
     </p>
   </Hint>
 
   <MyCode
     code={`
+
 <div>
   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo ratione minima 
   volupta Praesentiumatis atque vero minus omnis molestias fuga ut inventoreesse 
@@ -28,27 +30,33 @@ import LayoutCSS from "@layouts/LayoutCSS.astro";
 </div>      
 
 <style>
+  
+  body{
+    display: grid;
+    place-items: center;
+    height: 80vh;
+  }
 
-div{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 300px;
-  min-height: 300px;
-  margin: 30px 0px;
-  border-image-source: url(https://cdn.pixabay.com/photo/2016/02/19/15/29/frame-1210511_640.png);  
-  border-image-repeat: repeat;
+  div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+    min-height: 300px;
+    border-image-source: url(https://cdn.pixabay.com/photo/2016/02/19/15/29/frame-1210511_640.png);  
+    border-image-repeat: repeat;
 
-  /* Dependiendo de la imagen y el contenido de la caja, estos valores deben cambiarse para que se ajusten bien a la imagen. */
+    /* Dependiendo de la imagen y el contenido de la caja, estos valores deben cambiarse 
+    para que se ajusten bien a la imagen. */
 
-  padding: 10px 10px;
-  border-image-slice: 15%;
-  border-image-width: 15%;
-  border-image-outset: 15px;
-}
+    padding: 10px 10px;
+    border-image-slice: 23%;
+    border-image-width: 20%;
+    border-image-outset: 15px;
+  }
 
 </style>      
-          `}
+`}
   />
 </LayoutCSS>

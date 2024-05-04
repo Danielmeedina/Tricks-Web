@@ -54,9 +54,7 @@ pre::-webkit-scrollbar-thumb {
   background-color: rgb(var(--second-color));
   border-radius: 3px;
 }
-
 .animated {
-  view-timeline-name: --animated-element;
-  animation-timeline: --animated-element;
+  animation-timeline: view();
   animation-fill-mode: both;
 }

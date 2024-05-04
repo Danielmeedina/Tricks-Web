@@ -1,24 +1,36 @@
 ---
 import MyCode from "@components/MyCode.astro";
-import LayoutCSS from "@layouts/LayoutCSS.astro"
+import LayoutCSS from "@layouts/LayoutCSS.astro";
 ---
 
 <LayoutCSS title="Texto responsivo">
   <h1>Texto responsivo</h1>
-  <p>En esta <a href="https://utopia.fyi/type/calculator/?c=320,16,1.2,1200,24,1.25,5,2,&amp;s=0.75%7C0.5 %7C0.25,1.5%7C2%7C3%7C4%7C6,s-l" target="_blank" rel="noopener noreferrer">web</a> encontrarás una manera de hacer que tus textos sean responsivos, pero también Tienes estas otras formas de hacerlo por tu cuenta:</p>
-  
+  <p>
+    En <a
+      href="https://utopia.fyi/type/calculator/?c=320,16,1.2,1200,24,1.25,5,2,&s=0.75%7C0.5 %7C0.25,1.5%7C2%7C3%7C4%7C6,s-l"
+      target="_blank"
+      rel="noopener noreferrer">utopia.fyi</a
+    > encontrarás una manera de hacer que tus textos sean responsivos. Pero también
+    tienes estas otras formas de hacerlo por tu cuenta:
+  </p>
+
   <h2>clamp()</h2>
   <p>
-    Esta función te permite poner 3 valores (valor mínimo, valor preferido, valor máximo), estos valores fluirán a medida que se alcancen
+    Esta función te permite poner 3 valores (valor mínimo, valor preferido,
+    valor máximo), estos valores fluirán a medida que se alcancen
   </p>
-  <MyCode code={`
+  <MyCode
+    code={`
 .text {
   font-size: clamp(2rem, 1rem + 3vw, 50px)
 }         
-  `} lang="css"/>
+  `}
+    lang="css"
+  />
 
   <h2>calc()</h2>
-  <MyCode code={`
+  <MyCode
+    code={`
 /*
   14 = smaller font size
   18 = bigger font size
@@ -29,6 +41,7 @@ import LayoutCSS from "@layouts/LayoutCSS.astro"
 .body {
   font-size: calc(14px + (18 -14)*((100vw - 300px)/(1400 - 300)));
 }        
-  `} lang="css"/>
-
+  `}
+    lang="css"
+  />
 </LayoutCSS>

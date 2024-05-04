@@ -1,12 +1,13 @@
 ---
 import MyCode from "@components/MyCode.astro";
-import LayoutCSS from "@layouts/LayoutCSS.astro"
+import LayoutCSS from "@layouts/LayoutCSS.astro";
 ---
 
-<LayoutCSS title="Carrusel De Imágenes">
-    <h1>Carrusel De Imágenes</h1>
-  
-    <MyCode code={`
+<LayoutCSS title="Slider De Imágenes">
+  <h1>Slider De Imágenes</h1>
+
+  <MyCode
+    code={`
 <section class="carrousel">
   <article class="item">item 1</article>
   <article class="item">item 2</article>
@@ -37,5 +38,6 @@ import LayoutCSS from "@layouts/LayoutCSS.astro"
 }
 
 </style>    
-       `}/>
+       `}
+  />
 </LayoutCSS>

@@ -1,36 +1,146 @@
 ---
 import MyCode from "@components/MyCode.astro";
-import LayoutCSS from "@layouts/LayoutCSS.astro"
+import LayoutCSS from "@layouts/LayoutCSS.astro";
 ---
 
 <LayoutCSS title="Selector de Atributo">
-    <h1>Selector de atributo</h1>
-    <p>Los selectores de atributos permiten elegir elementos HTML en función de sus atributos y/o valores de esos atributos.</p>
-    <p>Los tipos de selectores de atributos son los siguientes:</p>
-    <ul>
-      <li>
-        <b>[nombre_atributo]</b>, selecciona los elementos que tienen establecido el atributo llamado nombre_atributo independientemente de su valor.
-      </li>
+  <h1>Selector de atributo</h1>
+  <p>
+    Los selectores de atributos permiten elegir elementos HTML en función de sus
+    atributos y/o valores de esos atributos.
+  </p>
+  <p>Los tipos de selectores de atributos son los siguientes:</p>
+  <ul>
+    <li>
+      <p>
+        <strong>[nombre_atributo]</strong>: selecciona los elementos que tienen
+        establecido el atributo llamado <b>nombre_atributo</b> independientemente
+        de su valor.
+      </p>
 
-      <li>
-        <b>[nombre_atributo=valor]</b>, selecciona los elementos que tienen establecido un atributo llamado nombre_atributo con un valor igual a valor.
-      </li>
+      <MyCode
+        code={`    
+<a href="/services">local</a>
+<br>
+<a href="http://" target="_blank" rel="noopener noreferrer">external</a>
 
-      <li>
-        <b>[nombre_atributo~=valor]</b>, selecciona los elementos que tienen establecido un atributo llamado nombre_atributo y al menos uno de los valores del atributo es valor.
-      </li>
+<style>
+  a[target]{
+    color: red;
+  }
+</style>
+  `}
+      />
+    </li>
 
-      <li>
-        <b>[nombre_atributo|=valor]</b>, selecciona los elementos que tienen establecido un atributo llamado nombre_atributo, cuyo valor es una lista de valores, donde alguno comienza por valor.
-      </li>
+    <li>
+      <p>
+        <strong>[nombre_atributo=valor]</strong>: selecciona los elementos que
+        tienen establecido un atributo llamado <b>nombre_atributo</b> con un valor
+        igual a <b>valor</b>.
+      </p>
 
-      <li>
-        <b>[nombre_atributo$=valor]</b>, Selecciona aquellas etiquetas cuyo atributo acabe en ese valor.
-      </li>
+      <MyCode
+        code={`        
+<a href="/services">local</a>
+<br>
+<a href="http://" target="_blank" rel="noopener noreferrer">external</a>
 
-      <li>
-        <b>[nombre_atributo^=valor]</b>, Selecciona aquellas etiquetas cuyo atributo comience por ese valor.
-      </li>
-    </ul>
-</Layou
-tCSS>
+<style>
+  a[href="/services"]{
+    color: red;
+  }
+</style>
+  `}
+      />
+    </li>
+
+    <li>
+      <p>
+        <strong>[nombre_atributo^=valor]</strong>: Selecciona aquellas etiquetas
+        cuyo atributo comience por ese <b>valor</b>.
+      </p>
+
+      <MyCode
+        code={`            
+<a href="/services">local</a>
+<br>
+<a href="https://" target="_blank" rel="noopener noreferrer">external</a>
+
+<style>
+  a[href^="https"]{
+    color: red;
+  }
+</style>
+  `}
+      />
+    </li>
+
+    <li>
+      <p>
+        <strong>[nombre_atributo$=valor]</strong>: Selecciona aquellas etiquetas
+        cuyo atributo acabe en ese <b>valor</b>.
+      </p>
+
+      <MyCode
+        code={`                    
+<a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">youtube</a>
+<br>
+<a href="https://developer.mozilla.org" target="_blank" rel="noopener noreferrer">mozilla</a>
+
+<style>
+  a[href$=".org"]{
+    color: red;
+  }
+</style>
+  `}
+      />
+    </li>
+
+    <li>
+      <p>
+        <strong>[nombre_atributo~=valor]</strong>: selecciona los elementos que
+        tienen establecido un atributo llamado <b>nombre_atributo</b>, cuyo
+        valor es una lista de valores, donde alguno es <b>valor</b>.
+      </p>
+
+      <MyCode
+        code={`                    
+<a href="#" class="icon logo image">logo</a>
+<br>
+<a href="#" class="icon image">icon</a>
+
+<style>
+  a[class~="logo"] {
+    color: red;
+  }
+</style>
+  `}
+      />
+    </li>
+
+    <li>
+      <p>
+        <strong>[nombre_atributo|=valor]</strong>: selecciona los elementos que
+        tienen establecido un atributo llamado <b>nombre_atributo</b>, cuyo
+        valor empiece por <b>valor</b> o empiece por <b>valor</b> seguido de un <b
+          >"-"</b
+        >.Se puede usar para coincidencias de subcódigos en otros idiomas.
+      </p>
+
+      <MyCode
+        code={`                 
+/*
+  Selecciona todos los elementos de la página cuyo atributo «lang» empiece por «es», 
+  es decir, «es», «es-ES», «es-AR», etc. 
+*/
+*[lang|="es"]{ 
+  color : red;
+} 
+
+`}
+        lang="css"
+      />
+    </li>
+  </ul>
+</LayoutCSS>
