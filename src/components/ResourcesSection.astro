@@ -1,0 +1,216 @@
+---
+import PageAccordion from "./PageAccordion.astro";
+import { utilspages } from "../services/UtilsPages";
+---
+
+<section id="tools" class="pages-container">
+  <article class="animated pages-title">
+    <h2>Recursos Frontend</h2>
+    <p>
+      Estas páginas te ayudarán a crear tu próximo sitio web de una manera
+      rápida y sencilla
+    </p>
+    <a
+      href="https://webcode.tools/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="more-tools"
+      title="ir a la pagina de webcode tools"
+    >
+      Más Recursos
+    </a>
+  </article>
+  <aside class="animated utils-pages">
+    {
+      Object.keys(utilspages).map((category) => (
+        <PageAccordion title={category} utilsPages={utilspages[category]} />
+      ))
+    }
+  </aside>
+</section>
+
+<style>
+  .pages-container {
+    max-width: var(--container);
+    margin: 0 auto 60px;
+    padding: 0 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .pages-title {
+    flex: 1 3 400px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column nowrap;
+    gap: 20px;
+    animation-name: showDown;
+    animation-range: entry 20% cover 60%;
+  }
+
+  @keyframes showDown {
+    from {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .pages-title h2 {
+    color: rgb(var(--title-color));
+    font-size: var(--text-5);
+    font-weight: 600;
+  }
+
+  .pages-title p {
+    color: rgb(var(--text-color));
+    font-size: var(--text-0);
+    text-wrap: balance;
+  }
+
+  .utils-pages {
+    flex: 3 1 400px;
+    height: 540px;
+    overflow-y: auto;
+    animation-name: showUp;
+    animation-range: entry 50% cover 70%;
+  }
+
+  @keyframes showUp {
+    from {
+      transform: translateY(100px);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .utils-pages:hover {
+    box-shadow: 10px 10px 40px rgb(31, 31, 31);
+  }
+
+  .utils-pages::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+    background-color: transparent;
+  }
+
+  .utils-pages::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 10px;
+  }
+
+  .utils-pages:hover::-webkit-scrollbar-thumb {
+    background-color: var(--main-color-alpha);
+    border-radius: 10px;
+  }
+
+  .more-tools,
+  .more-tools *,
+  .more-tools :after,
+  .more-tools :before,
+  .more-tools:after,
+  .more-tools:before {
+    border: 0 solid;
+    box-sizing: border-box;
+  }
+
+  .more-tools {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: button;
+    background-color: #000;
+    background-image: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 100%;
+    line-height: 1.5;
+    margin: 0;
+    -webkit-mask-image: -webkit-radial-gradient(#000, #fff);
+    padding: 0;
+  }
+  .more-tools:disabled {
+    cursor: default;
+  }
+  .more-tools:-moz-focusring {
+    outline: auto;
+  }
+  .more-tools svg {
+    display: block;
+    vertical-align: middle;
+  }
+  .more-tools [hidden] {
+    display: none;
+  }
+  .more-tools {
+    text-decoration: none;
+    background: rgb(var(--second-color));
+    box-sizing: border-box;
+    color: rgb(var(--bg-color));
+    display: block;
+    font-weight: 900;
+    -webkit-mask-image: none;
+    padding: 1rem 1rem;
+    perspective: 800px;
+    position: relative;
+    text-transform: uppercase;
+    transform: rotateX(8deg);
+    transform-style: preserve-3d;
+    transition: transform 0.2s;
+  }
+  .more-tools:hover {
+    background: rgb(var(--second-color) / 0.8);
+  }
+  .more-tools:before {
+    background: rgb(var(--second-color));
+    content: "";
+    display: block;
+    height: 20%;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    transform: rotateX(-90deg);
+    transform-origin: 0 0;
+    width: 100%;
+  }
+  .more-tools:hover {
+    transform: rotateX(25deg);
+  }
+
+  @media (width <= 860px) {
+    .pages-container {
+      gap: 30px;
+    }
+    .pages-title {
+      align-items: center;
+      text-align: center;
+      animation-name: showLef;
+    }
+    @keyframes showLef {
+      from {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .pages-title p {
+      font-size: var(--text-1);
+      text-align: center;
+    }
+
+    .utils-pages {
+      max-height: 580px;
+      animation-range: entry 15% cover 40%;
+    }
+  }
+</style>
