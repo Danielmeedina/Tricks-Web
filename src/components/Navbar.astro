@@ -124,16 +124,17 @@ import Javascript from "@/icons/Javascript.astro";
       z-index: 100;
       display: block;
       color: rgb(var(--title-color));
+      cursor: pointer;
     }
     .links-container {
-      z-index: 9;
+      z-index: 10;
       position: fixed;
       inset: 0 0 0 0;
       width: 100%;
       min-height: 100vh;
       backdrop-filter: blur(10px);
       background-color: transparent;
-      transform: translateX(-100%);
+      transform: translateX(-140%);
       transition: transform 0.5s ease-in-out;
     }
     .links-container.active {
@@ -141,16 +142,17 @@ import Javascript from "@/icons/Javascript.astro";
     }
 
     .links {
-      width: clamp(220px, 50%, 300px);
+      width: clamp(420px, 50%, 450px);
       height: 100vh;
       background-color: rgb(var(--bg-color));
       margin-left: auto;
       margin-top: 0;
-      padding: 60px 0 0 0;
+      padding: 60px 0 0 130px;
       display: flex;
       justify-content: flex-start;
       align-items: flex-start;
       flex-flow: column nowrap;
+      mask-image: linear-gradient(270deg, black 70%, transparent);
     }
     .links.active {
       transform: translateX(0);
@@ -177,6 +179,11 @@ import Javascript from "@/icons/Javascript.astro";
 
     .links li :global(svg) {
       display: block;
+    }
+  }
+
+  @media (width < 771px) {
+    .links {
     }
   }
 </style>
