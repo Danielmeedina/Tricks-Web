@@ -319,28 +319,37 @@ const { topics } = Astro.props;
     if (e.ctrlKey && e.key === "Enter") (input as HTMLInputElement).focus();
   });
 
-  input.addEventListener("keyup", (e: Event) => {
+  function debounce(func: Function, delay: number) {
+    let timeoutId: number;
+    return (...args: any[]) => {
+      clearTimeout(timeoutId);
+      timeoutId = window.setTimeout(() => func.apply(null, args), delay);
+    };
+  }
+
+  const filterTopics = (e: Event) => {
     const target = e.target as HTMLInputElement;
     if (target instanceof HTMLInputElement) {
       let elementosFiltrados = 0;
+      const query = target.value.toLowerCase();
 
       topics.forEach((el) => {
-        el.firstChild.textContent
-          .toLowerCase()
-          .includes(target.value.toLowerCase())
-          ? el.classList.remove("filter")
-          : el.classList.add("filter");
-
-        if (el.classList.contains("filter")) {
+        const text = el.textContent?.toLowerCase() || ""; // Asegura que siempre haya texto
+        if (text.includes(query)) {
+          el.classList.remove("filter");
+        } else {
+          el.classList.add("filter");
           elementosFiltrados++;
         }
       });
 
-      if (elementosFiltrados === topics.length) {
-        mensaje.style.display = "flex";
-      } else {
-        mensaje.style.display = "none";
-      }
+      mensaje.style.display =
+        elementosFiltrados === topics.length ? "flex" : "none";
     }
-  });
+  };
+
+  // Usa debouncing con 300ms de retraso
+  const debouncedFilter = debounce(filterTopics, 300);
+
+  input.addEventListener("keyup", debouncedFilter);
 </script>
