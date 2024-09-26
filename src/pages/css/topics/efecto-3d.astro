@@ -1,13 +1,13 @@
 ---
 import MyCode from "@components/MyCode.astro";
-import LayoutCSS from "@layouts/LayoutCSS.astro"
+import LayoutCSS from "@layouts/LayoutCSS.astro";
 ---
 
 <LayoutCSS title="Efecto 3D">
-    <h1>Efecto 3D</h1>
-    <!-- string literal -->
-  
-    <MyCode code={`
+  <h1>Efecto 3D</h1>
+
+  <MyCode
+    code={`
 <div id="poster"></div>
 
 <style>
@@ -61,5 +61,6 @@ import LayoutCSS from "@layouts/LayoutCSS.astro"
   })
 
 </script>    
-          `} />
+          `}
+  />
 </LayoutCSS>

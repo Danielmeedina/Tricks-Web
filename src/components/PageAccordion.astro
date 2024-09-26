@@ -1,34 +1,52 @@
 ---
-interface pages{
-  title: string,
-  text: string,
-  url: string
+interface pages {
+  title: string;
+  text: string;
+  url: string;
 }
 interface Props {
-  title: string,
-  utilsPages: pages[],
+  title: string;
+  utilsPages: pages[];
 }
-const {title, utilsPages} = Astro.props
+const { title, utilsPages } = Astro.props;
 ---
 
-
-<details class="accordion-container">
+<!-- @ts-ignore -->
+<details name="resources" class="accordion-container">
   <summary>
     <p class="titles">{title}</p>
-    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="20" height="20" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon icon-tabler icon-tabler-chevron-down"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
       <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
       <path d="M6 9l6 6l6 -6"></path>
     </svg>
   </summary>
   <ul>
-    {utilsPages.map(({ title, url, text }) => (
-      <li>
-        <a href={url} target="_blank" rel="noopener noreferrer" title={`ìr a la pagina de ${title}`}>
-          <p class="title-page">{title}</p>
-          <p class="text">{text}</p>
-        </a>
-      </li>
-    ))}
+    {
+      utilsPages.map(({ title, url, text }) => (
+        <li>
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={`ìr a la pagina de ${title}`}
+          >
+            <p class="title-page">{title}</p>
+            <p class="text">{text}</p>
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </details>
 
@@ -60,8 +78,8 @@ const {title, utilsPages} = Astro.props
   summary:hover {
     background-color: var(--accordion-section-color);
   }
-  summary svg{
-    transition: transform .5s ease;
+  summary svg {
+    transition: transform 0.5s ease;
   }
 
   .accordion-container[open] summary svg {
@@ -71,7 +89,7 @@ const {title, utilsPages} = Astro.props
   .accordion-container[open] summary {
     background-color: var(--accordion-section-color);
     position: sticky;
-    top:0;
+    top: 0;
   }
 
   .accordion-container[open] .titles,
@@ -112,7 +130,7 @@ const {title, utilsPages} = Astro.props
     font-weight: 400;
   }
 
-  .accordion-container a:hover .title-page{
+  .accordion-container a:hover .title-page {
     color: rgb(var(--second-color));
   }
 
@@ -124,21 +142,7 @@ const {title, utilsPages} = Astro.props
     color: rgb(var(--text-color));
     font-size: 14px;
   }
-  .text:first-letter{
+  .text:first-letter {
     text-transform: uppercase;
   }
 </style>
-
-<script>
-  const details = document.querySelectorAll('details');
-
-  details.forEach(detail => {
-    detail.addEventListener('click', () => {
-      details.forEach(otherdetail => {
-        if (otherdetail !== detail) {
-          otherdetail.removeAttribute('open');
-        }
-      });
-    });
-  });
-</script>
