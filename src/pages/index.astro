@@ -3,10 +3,7 @@ import Footer from "@components/Footer.astro";
 import HomeTypewritter from "@components/HomeTypewritter.astro";
 import ResourcesSection from "@components/ResourcesSection.astro";
 import RootLayout from "@/layouts/RootLayout.astro";
-import HTML from "@/icons/HTML.astro";
-import CSS from "@/icons/CSS.astro";
-import Javascript from "@/icons/Javascript.astro";
-import Git from "@/icons/Git.astro";
+import { NavbarLinks } from "@/services/Navbar";
 ---
 
 <RootLayout
@@ -30,18 +27,13 @@ import Git from "@/icons/Git.astro";
         > al desarrollo web
       </p>
       <div class="container-lang">
-        <a href="/html/" title="ir a la seccion de html">
-          <HTML />
-        </a>
-        <a href="/css/" title="ir a la seccion de css">
-          <CSS />
-        </a>
-        <a href="/javascript/" title="ir a la seccion de javascript">
-          <Javascript />
-        </a>
-        <a href="/git/" title="ir a la seccion de git">
-          <Git />
-        </a>
+        {
+          NavbarLinks.map((item) => (
+            <a href={item.url} title={`ir a la seccion de ${item.title}`}>
+              <item.icono />
+            </a>
+          ))
+        }
       </div>
       <a
         href="#tools"
