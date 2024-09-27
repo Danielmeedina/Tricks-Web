@@ -1,8 +1,5 @@
 ---
-import CSS from "@/icons/CSS.astro";
-import Git from "@/icons/Git.astro";
-import HTML from "@/icons/HTML.astro";
-import Javascript from "@/icons/Javascript.astro";
+import { NavbarLinks } from "@services/Navbar";
 ---
 
 <header class="header blur">
@@ -10,24 +7,16 @@ import Javascript from "@/icons/Javascript.astro";
     <a href="/" class="logo" title="ir a pagina principal"> Tricks Web</a>
     <div class="links-container">
       <ul class="links">
-        <li>
-          <HTML width="54" height="54" />
-          <a title="ir a la seccion de html" href="/html/">HTML</a>
-        </li>
-        <li>
-          <CSS width="54" height="54" />
-          <a title="ir a la seccion de css" href="/css/">CSS</a>
-        </li>
-        <li>
-          <Javascript />
-          <a title="ir a la seccion de javascript" href="/javascript/"
-            >JAVASCRIPT</a
-          >
-        </li>
-        <li>
-          <Git />
-          <a title="ir a la seccion de git" href="/git/">GIT</a>
-        </li>
+        {
+          NavbarLinks.map((item) => (
+            <li>
+              <item.icono />
+              <a title={`ir a la seccion de ${item.title}`} href={item.url}>
+                {item.title}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
     <button class="hamburger" title="Abrir menu">
@@ -95,6 +84,10 @@ import Javascript from "@/icons/Javascript.astro";
 
   .links li {
     list-style: none;
+  }
+
+  .links a {
+    text-transform: uppercase;
   }
 
   .links li :global(svg) {
