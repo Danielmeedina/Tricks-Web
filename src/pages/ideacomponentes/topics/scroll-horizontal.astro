@@ -1,0 +1,101 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutComponent from "@layouts/LayoutComponent.astro";
+---
+
+<LayoutComponent title="Scroll Horizontal">
+  <h1>Scroll Horizontal</h1>
+
+  <p>
+    Te permite manejar el scroll horizontal de una caja mediante el scroll
+    vertical de la página. Creando un efecto increíble sin molestar el scroll
+    del usuario, todo de una manera fluida.
+  </p>
+
+  <MyCode
+    code={`
+<section class="horizontal-scroll">
+  <div class="container">
+    <article><span>1</span></article>
+    <article><span>2</span></article>
+    <article><span>3</span></article>
+    <article><span>4</span></article>
+  </div>
+</section>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #111;
+  font-optical-sizing: auto;
+  overflow-x: hidden;
+  color: #eee;
+}
+
+section.horizontal-scroll {
+  --viewport-width: 100dvw;
+  --number-items: 4;
+  --max-scroll-distance: calc((var(--viewport-width) * calc(var(--number-items) - 1)*-1) + 144px - 72px);
+  display: flex;
+  height: calc(var(--viewport-width) * var(--number-items));
+  view-timeline-name: --section-pin-tl;
+  view-timeline-axis: block;
+}
+
+.horizontal-scroll .container {
+  position: sticky;
+  top: 0;
+  padding: 80px 0 24px 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100dvh;
+  width: calc(var(--viewport-width) * var(--number-items));
+  -webkit-animation: linear move forwards;
+          animation: linear move forwards;
+  animation-timeline: --section-pin-tl;
+  animation-range: contain 0% contain 100%;
+}
+
+.horizontal-scroll .container article {
+  position: relative;
+  height: 100%;
+  width: calc(var(--viewport-width) - 48px);
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #ffffff0f;
+  padding: 40px;
+  border-radius: 16px;
+}
+
+
+@keyframes move {
+  to {
+    transform: translateX(var(--max-scroll-distance));
+  }
+}
+
+aside{
+  min-height: 70vh;
+  background-color: red;
+}
+
+@media screen and (min-width: 800px) {
+  section.horizontal-scroll {
+    --viewport-width: 800px;
+  }
+}
+
+</style>    
+          `}
+  />
+</LayoutComponent>

@@ -1,0 +1,15 @@
+---
+import LayoutTopic from "@layouts/LayoutTopic.astro";
+import TopicsNavbar from "@components/TopicsNavbar.astro";
+const topics = await Astro.glob(`../pages/ideacomponentes/topics/*.astro`);
+
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<LayoutTopic title={title} colorLang="#07dd1a" href="/ideacomponentes/">
+  <TopicsNavbar topics={topics} slot="topic-navbar" />
+  <slot />
+</LayoutTopic>

@@ -1,12 +1,13 @@
 ---
 import MyCode from "@components/MyCode.astro";
-import LayoutCSS from "@layouts/LayoutCSS.astro"
+import LayoutComponent from "@layouts/LayoutComponent.astro";
 ---
 
-<LayoutCSS title="Acordeón">
-    <h1>Acordeón</h1>
-  
-    <MyCode code={`
+<LayoutComponent title="Acordeón">
+  <h1>Acordeón</h1>
+
+  <MyCode
+    code={`
 <details>
   <summary>
     Title accordion
@@ -57,5 +58,6 @@ import LayoutCSS from "@layouts/LayoutCSS.astro"
   }
 
 </style>    
-          `} />
-</LayoutCSS>
+          `}
+  />
+</LayoutComponent>

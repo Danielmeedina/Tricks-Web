@@ -1,16 +1,24 @@
 ---
 import Warning from "@components/Warning.astro";
 import MyCode from "@components/MyCode.astro";
-import LayoutCSS from "@layouts/LayoutCSS.astro"
+import LayoutComponent from "@layouts/LayoutComponent.astro";
 ---
 
-<LayoutCSS title="Scroll de lectura">
+<LayoutComponent title="Scroll de lectura">
   <h1>Scroll de lectura</h1>
   <Warning>
-    <p>Esta funcionalidad es un poco reciente asi que no esta soportado por todos los navegadores, en <a href="https://caniuse.com/?search=animation-timeline" target="_blank" rel="noopener noreferrer">Can i use</a> puedes revisar que tan soportado esta en este preciso momento</p>
+    <p>
+      Esta funcionalidad es un poco reciente asi que no esta soportado por todos
+      los navegadores, en <a
+        href="https://caniuse.com/?search=animation-timeline"
+        target="_blank"
+        rel="noopener noreferrer">Can i use</a
+      > puedes revisar que tan soportado esta en este preciso momento
+    </p>
   </Warning>
-  
-  <MyCode code={`
+
+  <MyCode
+    code={`
 <section>
 <div class="progress">
 </div>
@@ -54,6 +62,6 @@ article{
 }
 
 </style>        
-  `}/>
-
-</LayoutCSS>
+  `}
+  />
+</LayoutComponent>

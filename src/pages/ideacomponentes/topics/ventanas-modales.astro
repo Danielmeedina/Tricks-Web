@@ -1,0 +1,66 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutComponent from "@layouts/LayoutComponent.astro";
+---
+
+<LayoutComponent title="Ventanas Modales">
+  <h1>Ventanas Modales</h1>
+
+  <MyCode
+    code={`
+<dialog id="favDialog">
+    <p>Lorem im cisqucitationem aliquam delectus</p>
+    <div class="btn-container">
+      <button id="confirmBtn">Ok</button> 
+      <button id="cancelBtn">Cancel</button>
+    </div>
+</dialog>
+
+<button id="showDialog">Show the dialog</button>  
+
+<p class="result"></p>
+
+<style>
+
+#favDialog:modal{
+  border: none;
+  width: 400px;
+  background-color: beige;
+  display: flex;
+  flex-flow: column nowrap;
+}
+#favDialog::backdrop{
+  background-color:rgba(0, 0, 0, 0.671);
+}
+
+</style>    
+
+<script>
+
+const showButton = document.getElementById('showDialog');
+const favDialog = document.getElementById('favDialog');
+const confirmBtn = favDialog.querySelector('#confirmBtn');
+const cancelBtn = favDialog.querySelector('#cancelBtn');
+const result = document.querySelector('.result');
+
+showButton.addEventListener('click', () => {
+  favDialog.showModal();
+});
+
+confirmBtn.addEventListener('click', (event) => {
+  favDialog.close("ty!!!!");
+});
+
+cancelBtn.addEventListener("click", () => {
+  favDialog.close("cerrado por medio de .close"); 
+
+});
+
+favDialog.addEventListener('close', () => {
+  result.textContent = favDialog.returnValue;
+});
+
+</script>
+          `}
+  />
+</LayoutComponent>

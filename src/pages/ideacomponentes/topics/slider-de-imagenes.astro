@@ -1,9 +1,9 @@
 ---
 import MyCode from "@components/MyCode.astro";
-import LayoutCSS from "@layouts/LayoutCSS.astro";
+import LayoutComponent from "@layouts/LayoutComponent.astro";
 ---
 
-<LayoutCSS title="Slider De Imágenes">
+<LayoutComponent title="Slider De Imágenes">
   <h1>Slider De Imágenes</h1>
 
   <MyCode
@@ -26,7 +26,6 @@ import LayoutCSS from "@layouts/LayoutCSS.astro";
   overflow-y: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x mandatory;
-  scrollbar-width: none;
 }
 
 .item {
@@ -40,4 +39,4 @@ import LayoutCSS from "@layouts/LayoutCSS.astro";
 </style>    
        `}
   />
-</LayoutCSS>
+</LayoutComponent>
