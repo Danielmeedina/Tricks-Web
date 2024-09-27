@@ -1,0 +1,112 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutComponent from "@layouts/LayoutComponent.astro";
+---
+
+<LayoutComponent title="Apilar cards">
+  <h1>Apilar cards</h1>
+
+  <MyCode
+    code={`
+<section>
+  <h1>Stack cards</h1>
+  <div class="stack-cards">
+    <div class="card">
+      <div class="container"><h2>1</h2></div>
+    </div>
+    <div class="card">
+      <div class="container"><h2>2</h2></div>
+    </div>
+    <div class="card">
+      <div class="container"><h2>3</h2></div>
+    </div>
+  </div>
+</section>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  scroll-behavior: smooth;
+  color: #eee;
+}
+
+.stack-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  view-timeline-name: --stack-cards;
+  margin-bottom: 300px;
+}
+
+.stack-cards .card {
+  position: sticky;
+  height: 525px;
+  top: 48px;
+  width: 450px;
+}
+
+.stack-cards .card .container {
+  background-color: #eee;
+  width: 100%;
+  height: 525px;
+  border-radius: 24px;
+  display: grid;
+  place-items: center;
+  color: #111;
+  transform-origin: center top;
+  animation: linear scale forwards;
+  animation-timeline: --stack-cards;
+}
+
+@keyframes scale {
+  to {
+    background-color: var(--final-bg, #fff);
+    transform: scale(var(--max-scale, 1));
+  }
+}
+
+.stack-cards .card .container h2 {
+  font-size: 200px;
+}
+
+.stack-cards .card:nth-child(1) {
+  --max-scale: 0.7;
+  --final-bg: #555;
+  padding-top: 32px;
+}
+.stack-cards .card:nth-child(1) .container {
+  animation-range: exit-crossing 0% exit-crossing 25%;
+}
+
+.stack-cards .card:nth-child(2) {
+  --max-scale: 0.8;
+  --initial-range: 25%;
+  --final-range: 50%;
+  --final-bg: #888;
+  padding-top: 64px;
+}
+.stack-cards .card:nth-child(2) .container {
+  animation-range: exit-crossing 25% exit-crossing 50%;
+}
+
+.stack-cards .card:nth-child(3) {
+  --max-scale: 0.9;
+  --initial-range: 50%;
+  --final-range: 75%;
+  --final-bg: #bbb;
+  padding-top: 96px;
+}
+.stack-cards .card:nth-child(3) .container {
+  animation-range: exit-crossing 50% exit-crossing 75%;
+}
+
+</style>    
+          `}
+  />
+</LayoutComponent>

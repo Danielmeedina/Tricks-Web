@@ -9,9 +9,9 @@ import LayoutCSS from "@layouts/LayoutCSS.astro";
   <MyCode
     code={`    
 <section>
-  <a href="#" class="ripple">inicio</a>
-  <div class="box ripple"> hola </div>
-  <button class="ripple">x</button>   
+  <a href="#" class="ripple">click me</a>
+  <div class="box ripple"> click me</div>
+  <button class="ripple">click me</button>   
 </section>    
 
 <style>
@@ -70,7 +70,7 @@ import LayoutCSS from "@layouts/LayoutCSS.astro";
 
   buttons.forEach(btn => {
     
-    // puedes cambair el "click" por "mouseenter" para no tener la necesidad 
+    // puedes cambiar el "click" por "mouseenter" para no tener la necesidad 
     // de hacer click para ver el efecto
     btn.addEventListener("click", function(e){
       let x = e.clientX - e.target.offsetLeft;

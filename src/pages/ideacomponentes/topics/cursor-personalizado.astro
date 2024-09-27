@@ -1,12 +1,13 @@
 ---
 import MyCode from "@components/MyCode.astro";
-import LayoutCSS from "@layouts/LayoutCSS.astro"
+import LayoutComponent from "@layouts/LayoutComponent.astro";
 ---
 
-<LayoutCSS title="Efecto cursor personalizado">
-  <h1>Efecto cursor personalizado</h1>
+<LayoutComponent title="Cursor personalizado">
+  <h1>Cursor personalizado</h1>
 
-  <MyCode code={`
+  <MyCode
+    code={`
 <div class="cursor"></div>
 
 <style>
@@ -42,6 +43,6 @@ document.addEventListener("mousemove", (e) =>{
 })
 
 </script>
-  `}/>
-
-</LayoutCSS>
+  `}
+  />
+</LayoutComponent>

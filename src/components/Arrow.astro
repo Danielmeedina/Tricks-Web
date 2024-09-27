@@ -42,7 +42,13 @@ const { href } = Astro.props;
 
 <script>
   const arrow = document.querySelector(".arrow") as HTMLElement;
-  const pages = ["/css/", "/html/", "/javascript/", "/git/"];
+  const pages = [
+    "/css/",
+    "/html/",
+    "/javascript/",
+    "/git/",
+    "/ideacomponentes/",
+  ];
   if (!pages.includes(window.location.pathname)) {
     arrow.style.display = "block";
   }
