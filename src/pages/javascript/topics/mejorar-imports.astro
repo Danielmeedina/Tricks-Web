@@ -1,0 +1,30 @@
+---
+import LayoutJS from "@layouts/LayoutJS.astro";
+import MyCode from "@components/MyCode.astro";
+---
+
+<LayoutJS title="Mejorar imports">
+  <h1>Mejorar imports</h1>
+  <p>
+    De esta manera puedes mejorar los imports de tu codigo de manera rapida y
+    sencilla, olvidandote de los infernales <b>./././components/button</b>;
+    haciendo tu codigo mas limpio y legible, el resultado de este ejemplo seria
+    <b>@/components/button</b>. Esta configuracion se tiene que hacer en el <b
+      >tsconfig.json</b
+    >
+  </p>
+
+  <MyCode
+    code={`
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}       
+  `}
+    lang="json"
+  />
+</LayoutJS>
