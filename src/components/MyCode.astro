@@ -5,7 +5,7 @@ import codiLink from "@/icons/codiLink.ico";
 ---
 
 <div class="container-code">
-  <nav>
+  <header>
     <a
       href="https://codi.link/%7C%7C"
       target="_blank"
@@ -39,7 +39,7 @@ import codiLink from "@/icons/codiLink.ico";
       </svg>
       Copiar
     </button>
-  </nav>
+  </header>
   <Code code={code} lang={lang} theme="slack-dark" />
 </div>
 
@@ -53,7 +53,7 @@ import codiLink from "@/icons/codiLink.ico";
     margin: 15px 0;
   }
 
-  nav {
+  header {
     position: sticky;
     top: 0;
     display: flex;
@@ -93,24 +93,23 @@ import codiLink from "@/icons/codiLink.ico";
     border-radius: 5px;
   }
   @media (width < 771px) {
-    nav {
+    header {
       display: none;
     }
   }
 </style>
 
 <script>
-  const copiarCodigo = (boton) => {
+  const CopyCode = (btn) => {
     // Encuentra el contenedor del código asociado al botón para posteriormente encontrar la etiqueta code
-    let contenedor = boton.parentElement.parentElement;
-    let codigoElemento = contenedor.querySelector("pre code");
-    let icon = document.getElementById("icon");
+    let container = btn.parentElement.parentElement;
+    let code = container.querySelector("pre code");
 
-    if (codigoElemento) {
-      let textoCodigo = codigoElemento.textContent || codigoElemento.innerText;
+    if (code) {
+      let textoCodigo = code.textContent || code.innerText;
 
       navigator.clipboard.writeText(textoCodigo).then(() => {
-        boton.innerHTML = `
+        btn.innerHTML = `
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-square-rounded-check-filled" width="22" height="22" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                 <path d="M12 2c-.218 0 -.432 .002 -.642 .005l-.616 .017l-.299 .013l-.579 .034l-.553 .046c-4.785 .464 -6.732 2.411 -7.196 7.196l-.046 .553l-.034 .579c-.005 .098 -.01 .198 -.013 .299l-.017 .616l-.004 .318l-.001 .324c0 .218 .002 .432 .005 .642l.017 .616l.013 .299l.034 .579l.046 .553c.464 4.785 2.411 6.732 7.196 7.196l.553 .046l.579 .034c.098 .005 .198 .01 .299 .013l.616 .017l.642 .005l.642 -.005l.616 -.017l.299 -.013l.579 -.034l.553 -.046c4.785 -.464 6.732 -2.411 7.196 -7.196l.046 -.553l.034 -.579c.005 -.098 .01 -.198 .013 -.299l.017 -.616l.005 -.642l-.005 -.642l-.017 -.616l-.013 -.299l-.034 -.579l-.046 -.553c-.464 -4.785 -2.411 -6.732 -7.196 -7.196l-.553 -.046l-.579 -.034a28.058 28.058 0 0 0 -.299 -.013l-.616 -.017l-.318 -.004l-.324 -.001zm2.293 7.293a1 1 0 0 1 1.497 1.32l-.083 .094l-4 4a1 1 0 0 1 -1.32 .083l-.094 -.083l-2 -2a1 1 0 0 1 1.32 -1.497l.094 .083l1.293 1.292l3.293 -3.292z" fill="#0eff05" stroke-width="0"></path>
@@ -119,7 +118,7 @@ import codiLink from "@/icons/codiLink.ico";
             `;
 
         setTimeout(() => {
-          boton.innerHTML = `
+          btn.innerHTML = `
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" width="22" height="22" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
                   <path d="M8 8m0 2a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2z"></path>
@@ -134,6 +133,6 @@ import codiLink from "@/icons/codiLink.ico";
 
   const copybtn = document.querySelectorAll(".copy");
   copybtn.forEach((btn) => {
-    btn.addEventListener("click", () => copiarCodigo(btn));
+    btn.addEventListener("click", () => CopyCode(btn));
   });
 </script>
