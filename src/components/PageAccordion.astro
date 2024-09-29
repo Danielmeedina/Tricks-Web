@@ -14,7 +14,7 @@ const { title, utilsPages } = Astro.props;
 <!-- @ts-ignore -->
 <details name="resources" class="accordion-container">
   <summary>
-    <p class="titles">{title}</p>
+    <h3 class="titles">{title}</h3>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="icon icon-tabler icon-tabler-chevron-down"
@@ -41,7 +41,7 @@ const { title, utilsPages } = Astro.props;
             rel="noopener noreferrer"
             title={`ìr a la pagina de ${title}`}
           >
-            <p class="title-page">{title}</p>
+            <h4 class="title-page">{title}</h4>
             <p class="text">{text}</p>
           </a>
         </li>
