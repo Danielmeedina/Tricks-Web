@@ -23,14 +23,19 @@ export const utilspages = {
       text: "Ruta de aprendizaje para ser Frontend",
     },
     {
+      title: "Devdocs",
+      url: "https://devdocs.io/",
+      text: "Toda la documentacion que necesites en un solo sitio",
+    },
+    {
       title: "GPRM",
       url: "https://gprm.itsvg.in/",
-      text: "Crea tu Readme para tu cuenta de github de una manera rapida y sencilla",
+      text: "Crea tu Readme para tu cuenta de github",
     },
     {
       title: "Refactoring Guru",
       url: "https://refactoring.guru/es/design-patterns",
-      text: "Aprende patrones de diseño de una manera sencilla",
+      text: "Aprende patrones de diseño",
     },
     {
       title: "HTML Reference",
@@ -90,39 +95,39 @@ export const utilspages = {
   ],
   Componentes: [
     {
-      title: "30 seconds of code",
-      url: "https://www.30secondsofcode.org/snippets/p/1/",
-      text: "Variedad de componentes listos para usar",
-    },
-    {
       title: "Css portal",
       url: "https://www.cssportal.com/css-loader-generator/",
-      text: "Aquí encontrarás cientos de loaders listos para usar",
+      text: "Loaders, Tooltip, Ribbon, grid, text gradient",
     },
     {
       title: "whirl",
       url: "https://whirl.netlify.app/",
-      text: "Aquí encontrarás cientos de loaders listos para usar",
+      text: "Loaders",
     },
     {
       title: "Css loaders",
       url: "https://cssloaders.github.io/",
-      text: "Aquí encontrarás cientos de loaders listos para usar",
+      text: "Loaders",
     },
     {
       title: "UI Buttons",
       url: "https://ui-buttons.web.app/",
-      text: "Aquí encontrarás cientos de botones listos para usar",
+      text: "Efecto a botones",
+    },
+    {
+      title: "Markodenic",
+      url: "https://markodenic.com/tools/buttons-generator/",
+      text: "Efecto a botones",
     },
     {
       title: "Uiverse",
       url: "https://uiverse.io/",
-      text: "Aquí encontrarás cientos de componentes listos para usar",
+      text: "Componentes de todo tipo",
     },
     {
       title: "React Skeleton",
       url: "https://skeletonreact.com/",
-      text: "Te permite crear skeleton para tus aplicaciones de react, también encontrarás decenas de ejemplos para usar rápidamente",
+      text: "Crea skeleton para tus aplicaciones de react",
     },
   ],
   Iconos: [
@@ -134,47 +139,52 @@ export const utilspages = {
     {
       title: "Yesicon",
       url: "https://yesicon.app/",
-      text: "Miles de iconos y vectores SVG listos para usar",
+      text: "SVG, WEBP, PNG",
     },
     {
       title: "Tabler Icons",
       url: "https://tabler-icons.io/",
-      text: "Cientos de iconos y vectores SVG listos para usar",
+      text: "SVG, PNG",
+    },
+    {
+      title: "Css.gg",
+      url: "https://css.gg/icon/chevron-right/css",
+      text: "CSS, SVG",
     },
     {
       title: "Icons 8",
       url: "https://icons8.com/",
-      text: "Cientos de iconos listos para usar",
+      text: "SVG, PNG",
     },
     {
       title: "Hero Icons",
       url: "https://heroicons.com/",
-      text: "Cientos de iconos listos para usar",
+      text: "SVG, JSX",
+    },
+    {
+      title: "Chromicons",
+      url: "https://lifeomic.github.io/chromicons.com/",
+      text: "SVG",
     },
     {
       title: "React Icons",
       url: "https://react-icons.github.io/react-icons/",
-      text: "Cientos de iconos listos para usar en tus proyectos de React",
-    },
-    {
-      title: "Font Awesome",
-      url: "https://fontawesome.com",
-      text: "Cientos de iconos listos para usar",
+      text: "Iconos de React",
     },
     {
       title: "SVG Repo",
       url: "https://www.svgrepo.com/",
-      text: "Cientos de iconos y vectores SVG listos para usar",
+      text: "SVG, PNG",
     },
     {
       title: "Flaticon",
       url: "https://www.flaticon.com/",
-      text: "Cientos de iconos y vectores SVG listos para usar",
+      text: "PNG",
     },
     {
       title: "Many Pixels",
       url: "https://www.manypixels.co/free-icons",
-      text: "Cientos de iconos y vectores SVG listos para usar",
+      text: "Ilustraciones SVG, PNG",
     },
   ],
   Colores: [
@@ -186,54 +196,54 @@ export const utilspages = {
     {
       title: "Color Designer",
       url: "https://colordesigner.io/",
-      text: "Te ayuda a elegir las mejores paletas de colores, sus variantes, tonalidades, etc.",
+      text: "Te ayuda a elegir colores, sus variantes, tonalidades, etc.",
     },
     {
       title: "Ui Colors",
       url: "https://uicolors.app/create",
-      text: "Te ayuda a elegir la paleta de color, sus variantes, tonalidades, etc.",
+      text: "Te ayuda a elegir colores, sus variantes, tonalidades, etc.",
+    },
+    {
+      title: "Easing gradients",
+      url: "https://larsenwork.com/easing-gradients/#editor",
+      text: "Generar gradientes",
     },
     {
       title: "Happy Hues",
       url: "https://www.happyhues.co/palettes/13",
-      text: "Te ayuda a escoger una paleta de colores rápidamente",
+      text: "Escoge una paleta de colores",
     },
     {
       title: "Coolors",
       url: "https://coolors.co/0c1618-59c3c3-ebebeb-ca61c3-da2c38",
-      text: "Te ayuda a escoger una paleta de colores rápidamente",
+      text: "Escoge una paleta de colores",
     },
     {
       title: "Color Adobe",
       url: "https://color.adobe.com/es/create/image",
-      text: "Te ayuda a extraer los colores de una imagen rápidamente",
+      text: "Extrae los colores de una imagen",
     },
     {
       title: "CSS Gradient",
       url: "https://cssgradient.io/",
-      text: "Te ayuda a crear gradientes rápidamente",
+      text: "Genera degredados",
     },
     {
       title: "CSS Hero",
       url: "https://www.csshero.org/mesher/",
-      text: "Te permite generar fondos con degradados de una forma rápida y muy atractiva",
+      text: "Genera degradados multiples",
     },
     {
       title: "My color space",
       url: "https://mycolor.space/gradient?ori=to+right+bottom&hex=%23051937&hex2=%23A8EB12&sub=1",
-      text: "Te ayuda a crear gradientes rápidamente",
+      text: "Genera degradados",
     },
   ],
   Backgrounds: [
     {
       title: "10015.io",
       url: "https://10015.io/tools/css-background-pattern-generator",
-      text: "Te permite generar patrones para background de una manera rapida",
-    },
-    {
-      title: "superdesigner",
-      url: "https://superdesigner.co/",
-      text: "Te ofrece una variedad de diseños para que uses en tus background",
+      text: "Genera patrones para tus fondos",
     },
     {
       title: "BGJar",
@@ -243,7 +253,7 @@ export const utilspages = {
     {
       title: "Shape Divider",
       url: "https://www.shapedivider.app/",
-      text: "Te ayuda a crear divisores de diferentes formas para tus secciones",
+      text: "Crea divisores de diferentes formas para tus secciones",
     },
     {
       title: "Get Waves",
@@ -253,108 +263,108 @@ export const utilspages = {
     {
       title: "Svg Waves",
       url: "https://svgwave.in/",
-      text: "te ayuda a crear ondas animadas para separar secciones",
+      text: "Te ayuda a crear ondas animadas para separar secciones",
     },
   ],
   Imagenes: [
     {
+      title: "huggingface",
+      url: "https://huggingface.co/spaces/webml-community/remove-background-webgpu",
+      text: "Elimina fondos de imágenes con IA",
+    },
+    {
       title: "Clipdrop",
       url: "https://clipdrop.co/remove-background",
-      text: "Te permite eliminar rápidamente fondos de imágenes",
+      text: "Elimina fondos de imágenes",
     },
     {
       title: "Recraft app",
       url: "https://app.recraft.ai/community",
-      text: "Te permite crear imagenes e iconos con IA de manera rapida",
+      text: "Crea imagenes e iconos con IA",
     },
     {
       title: "Storyset",
       url: "https://storyset.com/",
-      text: "Te ofrece cientos de ilustraciones que puedes personalizar, animar y usar rápidamente",
+      text: "Ilustraciones",
     },
     {
       title: "Undraw",
       url: "https://undraw.co/illustrations",
-      text: "Te ofrece miles de ilustraciones que puedes personalizar rápidamente",
+      text: "Ilustraciones",
     },
     {
       title: "Freepik",
       url: "https://www.freepik.com/",
-      text: "te ofrece miles de ilustraciones e imágenes de forma rápida",
+      text: "Ilustraciones, imágenes",
+    },
+    {
+      title: "shots.so",
+      url: "https://shots.so/",
+      text: "Te permite crear mockups para tus imagenes",
     },
     {
       title: "IloveImg",
       url: "https://www.iloveimg.com/es/redimensionar-imagen",
-      text: "Te permite cambiar el tamaño, recortar y comprimir imágenes de una manera fácil y rápida",
+      text: "Cambia el tamaño, recorta y comprime imágenes",
     },
     {
       title: "TinyPng",
       url: "https://tinypng.com/",
-      text: "Comprime tus imágenes rápidamente",
+      text: "Comprime tus imágenes",
     },
     {
       title: "Squoosh",
       url: "https://squoosh.app/",
-      text: "Comprime tus imágenes rápidamente",
+      text: "Comprime tus imágenes",
     },
   ],
   Efectos: [
     {
       title: "Fancy Borders Radius",
       url: "https://9elements.github.io/fancy-border-radius/#67.12.40.44--.",
-      text: "Te permite crear diferentes estilos de bordes",
+      text: "Crea diferentes estilos de bordes",
     },
     {
       title: "Shadows.brumm",
       url: "https://shadows.brumm.af/",
-      text: "Te ayuda a crear sombras de una manera rápida",
+      text: "Crea sombras",
     },
     {
       title: "CSS Glass",
       url: "https://css.glass/",
-      text: "Te ayuda a crear el efecto de glasmorfismo de una manera rápida",
+      text: "Crea el efecto de glasmorfismo",
     },
     {
       title: "Neumorphism",
       url: "https://neumorphism.io/#e0e0e0",
-      text: "Te ayuda a crear el efecto de neumorfismo de una manera rápida",
-    },
-    {
-      title: "Transform CSS",
-      url: "https://css-transform.moro.es/",
-      text: "Te permite jugar con la propiedad de transformación para dar efectos sorprendentes",
+      text: "Crea el efecto de neumorfismo",
     },
     {
       title: "Transition CSS",
       url: "https://www.transition.style/#in:diamond:hesitate",
-      text: "Te permite jugar con la propiedad de transición para dar efectos sorprendentes",
+      text: "Transiciónes listas para usar",
     },
     {
       title: "Bennettfeely",
       url: "https://bennettfeely.com/clippy/",
-      text: "Te ayuda a utilizar la propiedad css clip-path de una manera más amigable y rápida",
+      text: "Utiliza clip-path de una manera más amigable y rápida",
     },
   ],
   Animaciones: [
     {
       title: "Animatiss",
       url: "https://xsgames.co/animatiss/",
-      text: "Te ofrece algunas animaciones que puedes integrar rápidamente en tus proyectos",
+      text: "Diversas animaciones",
     },
     {
       title: "Animista",
       url: "https://animista.net/play/basic/flip-2",
-      text: "Te ofrece una variedad de animaciones que puedes personalizar y usar rápidamente",
+      text: "Multiples animaciones",
     },
     {
       title: "Animate CSS",
       url: "https://animate.style/",
-      text: "Te ofrece una variedad de animaciones para usar con un solo clic",
-    },
-    {
-      title: "Cattocs CSS",
-      url: "https://www.cattocss.com/",
-      text: "variedad de animaciones para botones",
+      text: "Multiples animaciones",
     },
   ],
 };
