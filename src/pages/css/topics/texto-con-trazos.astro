@@ -1,0 +1,25 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro";
+---
+
+<LayoutCSS title="Texto con trazos">
+  <h1>Texto con trazos</h1>
+
+  <MyCode
+    code={`
+<h3>Welcome</h3>
+
+<style>
+
+  h3{
+    font-size: 50px;
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: blue;
+  }
+
+</style>
+       `}
+  />
+</LayoutCSS>

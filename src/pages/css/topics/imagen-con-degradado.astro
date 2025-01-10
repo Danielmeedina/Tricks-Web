@@ -1,0 +1,25 @@
+---
+import MyCode from "@components/MyCode.astro";
+import LayoutCSS from "@layouts/LayoutCSS.astro";
+---
+
+<LayoutCSS title="Imagen con degradado">
+  <h1>Imagen con degradado</h1>
+
+  <MyCode
+    code={`
+<img src="">
+
+<style>
+   
+img{
+  mask-image: linear-gradient(
+    black 80%,
+    transparent
+  );
+}
+
+</style>
+       `}
+  />
+</LayoutCSS>

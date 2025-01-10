@@ -1,0 +1,28 @@
+---
+import LayoutJS from "@layouts/LayoutJS.astro";
+import MyCode from "@components/MyCode.astro";
+---
+
+<LayoutJS title="Media query">
+  <h1>Media query</h1>
+  <p>
+    Si el css no ha solucionado tu problema, usa esta manera cuando quieras
+    hacer uso de media queries en elementos de html.
+  </p>
+
+  <MyCode
+    code={`
+const desktopMediaQuery = window.matchMedia("(min-width: 800px)")
+
+desktopMediaQuery.addEventListener("change", e => {
+  if(event.matches){
+    //aqui iria el elemento que quieres mostrar o quieres ocultar
+    //o la accion que quieras hacer 
+  }
+})
+  
+  
+  `}
+    lang="js"
+  />
+</LayoutJS>

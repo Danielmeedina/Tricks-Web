@@ -1,0 +1,40 @@
+---
+import LayoutJS from "@layouts/LayoutJS.astro";
+import MyCode from "@components/MyCode.astro";
+---
+
+<LayoutJS title="Extraer datos de un formulario">
+  <h1>Extraer datos de un formulario</h1>
+  <p>
+    De esta manera puedes extraer los datos de un formulario de una manera
+    rapida y sencilla, ayuda especialmente cuando trabajas con frameworks
+  </p>
+
+  <MyCode
+    code={`
+<form id="miFormulario">
+  <label>
+    Nombre: <input type="text" name="nombre" required>
+  </label>
+  <label>
+    Correo: <input type="text" name="correo" required>
+  </label>
+  <button type="submit">Enviar</button>
+</form>
+
+<script>
+
+  document.getElementById('miFormulario').addEventListener('submit', event => {
+    event.preventDefault(); // Evita que la página se recargue
+
+    // Convierte los datos del formulario a un objeto
+    const data = Object.fromEntries(new FormData(event.target));
+
+    console.log(data)
+  });
+
+</script>
+ 
+  `}
+  />
+</LayoutJS>
